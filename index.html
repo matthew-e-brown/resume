@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="master.css">
+  <script src="./index.js" charset="utf-8" defer></script>
   <script src="https://kit.fontawesome.com/a73502ba26.js" crossorigin="anonymous"></script>
-  <script src="./index.js" charset="utf-8" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Resume | Matthew Brown</title>
   <style>
-    @media print { #notice { display: none; } }
+    /* Styling for the  */
     #notice, #notice a { font-size: 14px; }
     #notice button { display: block; margin: 0.8em auto 0 auto; }
     #notice {
@@ -22,6 +23,12 @@
       border-radius: 0.5em;
       box-shadow: 0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
     }
+
+    /* Center the reCAPTCHA */
+    #captcha-form { text-align: center; }
+    .g-recaptcha { display: inline-block; }
+
+    @media print { #notice, .unfilled, #captcha-form { display: none; } }
   </style>
 </head>
 <body>
@@ -179,9 +186,21 @@
       </li>
     </ul>
   </div>
-  <noscript>
-    <h2>References</h2>
+  <h2 class="unfilled">References</h2>
+  <div id="captcha-form">
+    <!-- Real sitekey: -->
+    <!-- 6Lexod8UAAAAAKXRtVNkU_HWE0zcMWvWUzQnsy7P -->
+    <!-- Google's testing sitekey: -->
+    <!-- 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI -->
+    <div 
+      class="g-recaptcha"
+      data-sitekey="6Lexod8UAAAAAKXRtVNkU_HWE0zcMWvWUzQnsy7P"
+      data-callback="captcha"
+    ></div>
+  </div>
+  <noscript id="captcha-noscript">
     <p>JavaScript must be enabled to view references (reCAPTHCA).</p>
+    <style>#captcha-form { display: none; }</style>
   </noscript>
 </body>
 </html>

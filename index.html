@@ -3,23 +3,25 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=9in, initial-scale=1.0">
   <link rel="stylesheet" href="master.css">
   <script src="./index.js" charset="utf-8" defer></script>
   <script src="https://kit.fontawesome.com/a73502ba26.js" crossorigin="anonymous"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Resume | Matthew Brown</title>
   <style>
-    /* Styling for the  */
+    /* Non-document stylings go here... */
+    /* Styling for the notice popup */
     #notice, #notice a { font-size: 14px; }
     #notice button { display: block; margin: 0.8em auto 0 auto; }
     #notice {
+      z-index: 1;
       position: fixed;
       background-color: white;
       top: 1em;
       left: 1em;
       padding: 1em;
-      max-width: 10em;
+      max-width: 15em;
       border-radius: 0.5em;
       box-shadow: 0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
     }
@@ -28,7 +30,23 @@
     #captcha-form { text-align: center; }
     .g-recaptcha { display: inline-block; }
 
-    @media print { #notice, .unfilled, #captcha-form { display: none; } }
+    /* Styles for the "print" icon/button */
+    body { position: relative; }
+    #print { 
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.2em;
+      height: 1.2em;
+      color: rgb(66, 63, 63);
+      font-size: 16pt;
+      cursor: pointer;
+    }
+
+    @media print { #notice, .unfilled, #captcha-form, #print { display: none; } }
   </style>
 </head>
 <body>
@@ -37,11 +55,14 @@
     are inconsistent across browsers, and can even change depending on your
     Windows display scaling.
     <a href="https://crbug.com/1059578" target="_blank">Until this is fixed</a>,
-    use "Custom" margins with <strong>17.5mm</strong> on the top & bottom and
-    <strong>22.5mm</strong> on the left & right to get the intended look.
-    <button>
-      Hide this box
-    </button>
+    If you <strong>aren't</strong> using <strong>Google Chrome</strong> with
+    your display scaling set to 100%, then use "Custom" margins with 
+    <strong>17.5mm</strong> on the top & bottom and <strong>22.5mm</strong> on
+    the left & right to make sure that you get the intended look.
+    <button>Hide this popup</button>
+  </div>
+  <div id="print" onclick="window.print()">
+    <i class="fas fa-print"></i>
   </div>
   <h1>Matthew Brown</h1>
   <div id="intro-table">

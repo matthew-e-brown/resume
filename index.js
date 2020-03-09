@@ -21,7 +21,7 @@ window.captcha = async value => {
   } else {    
     for (const reference of data) {
       const header = document.createElement('h4');
-      header.innerHTML = `${reference.name}, ${reference.title} &mdash; ${reference.workplace}`;
+      header.innerHTML = `${reference.name}: ${reference.title} &mdash; ${reference.workplace}`;
 
       const list = document.createElement('ul');
       for (const [type, contact] of Object.entries(reference.contact)) {

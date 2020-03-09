@@ -196,3 +196,8 @@ ul li li::before {
 .section.no-headers {
   grid-template-columns: 1fr;
 }
+
+.titles {
+  font-size: 6pt;
+  color: var(--header3);
+}

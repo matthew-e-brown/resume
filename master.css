@@ -175,6 +175,10 @@ ul li li::before {
   padding: 0.05cm 0.19cm;
 }
 
+.section:not(.no-headers)>h3 {
+  padding-top: 0.07cm;
+}
+
 .section {
   display: grid;
   grid-template-columns: 1fr 6fr;

@@ -49,7 +49,6 @@ successful reCAPTCHA validation:
       ]
     }
   },
-  ...
 ]
 ```
 

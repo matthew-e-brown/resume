@@ -5,31 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=9in, initial-scale=1.0">
   <link rel="stylesheet" href="master.css">
-  <script src="./index.js" charset="utf-8" defer></script>
   <script src="https://kit.fontawesome.com/a73502ba26.js" crossorigin="anonymous"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Resume | Matthew Brown</title>
   <style>
-    /* Non-document stylings go here... */
-    /* Styling for the notice popup */
-    #notice, #notice a { font-size: 14px; }
-    #notice button { display: block; margin: 0.8em auto 0 auto; }
-    #notice {
-      z-index: 1;
-      position: fixed;
-      background-color: white;
-      top: 1em;
-      left: 1em;
-      padding: 1em;
-      max-width: 15em;
-      border-radius: 0.5em;
-      box-shadow: 0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
-    }
-
-    /* Center the reCAPTCHA */
-    #captcha-form { text-align: center; }
-    .g-recaptcha { display: inline-block; }
-
     /* Styles for the "print" icon/button */
     body { position: relative; }
     #print { 
@@ -50,17 +28,6 @@
   </style>
 </head>
 <body>
-  <div id="notice">
-    This page is set up to print properly as a document. However, the margins
-    are inconsistent across browsers, and can even change depending on your
-    Windows display scaling.
-    <a href="https://crbug.com/1059578" target="_blank">Until this is fixed</a>,
-    If you <strong>aren't</strong> using <strong>Google Chrome</strong> with
-    your display scaling set to 100%, then use "Custom" margins with 
-    <strong>17.5mm</strong> on the top & bottom and <strong>22.5mm</strong> on
-    the left & right to make sure that you get the intended look.
-    <button>Hide this popup</button>
-  </div>
   <div id="print" onclick="window.print()">
     <i class="fas fa-print"></i>
   </div>
@@ -216,21 +183,5 @@
       </li>
     </ul>
   </div>
-  <h2 class="unfilled">References</h2>
-  <div id="captcha-form">
-    <!-- Real sitekey: -->
-    <!-- 6Lexod8UAAAAAKXRtVNkU_HWE0zcMWvWUzQnsy7P -->
-    <!-- Google's testing sitekey: -->
-    <!-- 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI -->
-    <div 
-      class="g-recaptcha"
-      data-sitekey="6Lexod8UAAAAAKXRtVNkU_HWE0zcMWvWUzQnsy7P"
-      data-callback="captcha"
-    ></div>
-  </div>
-  <noscript id="captcha-noscript">
-    <p>JavaScript must be enabled to view references (reCAPTHCA).</p>
-    <style>#captcha-form { display: none; }</style>
-  </noscript>
 </body>
 </html>

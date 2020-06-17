@@ -1,7 +1,7 @@
 <template>
-  <div id="cover-letter">
-    <h1>Cover Letter goes here</h1>
-  </div>
+  <main>
+    <p>I'll write a cover letter here later.</p>
+  </main>
 </template>
 
 <script>

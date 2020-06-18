@@ -23,29 +23,32 @@ export default {
     // },
   },
   skills: {
+    // For the sections: If the item is a list, its text will be item[0], followed by
+    // 
     "Programming": {
       "Languages / General": [
         "Two most skilled languages are JavaScript and Python",
-        "Intermediate to expert range experience working with Python for scripting",
-        [
-          // subarray will make <ul> inside previous item
-          "Intermediate experience with Pygame"
-        ],
+        {
+          text: "Intermediate to expert range experience working with Python for scripting",
+          sublist: [ "Intermediate experience with Pygame" ]
+        },
         "Experience with Bash/Shell scripting",
         "Moderately experienced with C and C#",
         "Beginner experience and moderate familiarity with Java"
       ],
       "Web Development Specific": [
-        "Expert experience with HTML, CSS, and JavaScript",
-        [
-          "Intermediate experience with Flexbox, experience with CSS Grid",
-          "ECMAScript ES7+ knowhow and understanding",
-          "Beginner with VueJS (this resume is a PDF of [a Vue app](https://github.com/matthew-e-brown/Resume)!)"
-        ],
-        "Experience with JavaScript for NodeJS/Server-side",
-        [
-          "Beginner with ExpressJS"
-        ],
+        {
+          text: "Expert experience with HTML, CSS, and JavaScript",
+          sublist: [
+            "Intermediate experience with Flexbox, experience with CSS Grid",
+            "ECMAScript ES7+ knowhow and understanding",
+            "Beginner with VueJS (this resume is a PDF of [a Vue app](https://github.com/matthew-e-brown/Resume)!)"
+          ]
+        },
+        {
+          text: "Experience with JavaScript for NodeJS/Server-side",
+          sublist: [  "Beginner with ExpressJS" ]
+        },
         "Experience and familiarity with PHP"
       ]
     },

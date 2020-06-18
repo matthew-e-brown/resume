@@ -11,6 +11,7 @@ import ResumeData from '@/resume-data';
 import ContactGrid from '@/components/ContactGrid';
 
 export default {
+  name: 'Page',
   components: { ContactGrid },
   data: function() {
     return {

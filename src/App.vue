@@ -1,31 +1,45 @@
 <template>
   <div id="page">
-    <h1>Matthew Brown</h1>
+    <h1>{{ name }}</h1>
     <router-view />
   </div>
 </template>
 
 <script>
+import ResumeData from '@/resume-data';
+
 export default {
   data: function() {
     return {
+      name: ResumeData.name,
       prod: (process.env.NODE_ENV === 'production')
     }
   }
 }
 </script>
 
+<style scoped>
+h1 {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 900;
+  font-size: 2.83em;
+  color: var(--header1);
+}
+</style>
+
 <style>
 :root {
   --header1: rgb(0, 69, 134);
   --header2: rgb(0, 102, 204);
   --header3: rgb(118, 113, 113);
+  --off-black: rgb(18, 13, 13);
 }
 
 :root {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 16px;
-  color: rgb(12, 16, 18);
+  font-weight: 400;
+  color: var(--off-black);
   background-color: rgb(220, 236, 252);
 }
 
@@ -52,11 +66,38 @@ body {
 @media only print {
   :root { font-size: 12pt; background: none; }
   body, #page { margin: 0; padding: 0; }
+  a { text-decoration-line: none; }
 
   @page {
     width: 8.5in;
     height: 11in;
     margin: 15mm 22.5mm 15mm 22.5mm;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+a {
+  color: var(--off-black);
+  transition: color 125ms ease-in-out;
+}
+
+a:hover {
+  color: rgb(0, 97, 209);
+}
+
+main>* {
+  margin: 0.85rem 0;
+}
+
+main>:first-child {
+  margin-top: 0;
+}
+
+main>:last-child {
+  margin-bottom: 0;
 }
 </style>

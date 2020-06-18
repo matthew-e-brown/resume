@@ -1,21 +1,19 @@
 <template>
   <main>
-    <ContactGrid :contact="resume.contact" />
-    <Section title="Skills"></Section>
-    <Section title="Education"></Section>
-    <Section title="Working Experience"></Section>
-    <Section title="Other Achievements"></Section>
+    <ResumeSection title="Skills"></ResumeSection>
+    <ResumeSection title="Education"></ResumeSection>
+    <ResumeSection title="Working Experience"></ResumeSection>
+    <ResumeSection title="Other Achievements"></ResumeSection>
   </main>
 </template>
 
 <script>
 import ResumeData from '@/resume-data';
-import Section from '@/components/ResumeSection';
-import ContactGrid from '@/components/ContactGrid';
+import ResumeSection from '@/components/ResumeSection';
 
 export default {
   name: 'Resume',
-  components: { Section, ContactGrid },
+  components: { ResumeSection },
   data: function() {
     return {
       resume: ResumeData

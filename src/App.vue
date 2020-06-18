@@ -1,17 +1,21 @@
 <template>
   <div id="page">
     <h1>{{ name }}</h1>
+    <ContactGrid :contact="contact" />
     <router-view />
   </div>
 </template>
 
 <script>
 import ResumeData from '@/resume-data';
+import ContactGrid from '@/components/ContactGrid';
 
 export default {
+  components: { ContactGrid },
   data: function() {
     return {
       name: ResumeData.name,
+      contact: ResumeData.contact,
       prod: (process.env.NODE_ENV === 'production')
     }
   }
@@ -43,17 +47,14 @@ h1 {
   background-color: rgb(220, 236, 252);
 }
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
 /* Width: 8.5in / 1/72in per pt / 12pt per em */
 /* Padding: 15mm, 22.5mm / (1/72 * 25.4mm) per pt / 12pt per em */
 #page {
   width: 51rem;
   padding: 3.5433rem 5.3149rem;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media not print {
@@ -91,10 +92,6 @@ a:hover {
 
 main>* {
   margin: 0.85rem 0;
-}
-
-main>:first-child {
-  margin-top: 0;
 }
 
 main>:last-child {

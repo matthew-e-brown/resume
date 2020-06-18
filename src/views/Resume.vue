@@ -2,9 +2,9 @@
   <main>
     <ResumeSection title="Skills">
       <ResumeSubsection
-        v-for="([subsection, content], i) in Object.entries(resume.skills)"
-        :header="subsection"
-        :body="content"
+        v-for="([header, content], i) in Object.entries(resume.skills)"
+        :header="header"
+        :content="content"
         :key="i"
       />
     </ResumeSection>

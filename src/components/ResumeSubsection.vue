@@ -1,42 +1,34 @@
 <template>
   <div class="subsection">
     <h3>{{ header }}</h3>
-    <div class="subsubsection">
-      <template v-for="([subheader, content], i) in Object.entries(body)">
+    <div>
+      <template v-for="([subheader, body], i) in Object.entries(content)">
         <h4 :key="`h4-${i}`">{{ subheader }}</h4>
-        <ul :key="`ul-${i}`">
-          <!-- Template is used to allow for v-if on the <li> -->
-          <template v-for="(item, j) in content">
-            <li v-if="!item.sublist" :key="`li-${i}-${j}`">
-              <span v-html="parse(item)"></span>
-            </li>
-            <li v-else :key="`li-${i}-${j}`">
-              <span v-html="parse(item['text'])"></span>
-              <ul>
-                <li v-for="(subitem, l) in item['sublist']" :key="`li-${i}-${j}-${l}`">
-                  <span v-html="parse(subitem)"></span>
-                </li>
-              </ul>
-            </li>
-          </template>
-        </ul>
+        <VueMarkdown
+          :key="i"
+          :source="body"
+          :prerender="prerender"
+          :anchorAttributes="{ target: '_blank' }"
+        />
       </template>
     </div>
   </div>
 </template>
 
 <script>
+import dedent from 'dedent-js';
+import VueMarkdown from 'vue-markdown';
+
 export default {
   props: {
     // Not going to be an ID this time, no regex needed:
     header: { required: true, type: String },
-    body: { required: true, type: Object }
+    content: { required: true, type: Object }
   },
   methods: {
-    parse: function(str) {
-      return str.replace(/\[(.*?)\]\((.*?)\)/g, `<a href="$2" rel="_blank">$1</a>`);
-    }
-  }
+    prerender: str => dedent(str)
+  },
+  components: { VueMarkdown }
 }
 </script>
 
@@ -44,5 +36,29 @@ export default {
 .subsection {
   display: grid;
   grid-template-columns: 3fr 7fr;
+}
+
+* >>> ul {
+  list-style-type: square;
+}
+
+* >>> ul ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+* >>> ul ul li::before {
+  position: absolute;
+  left: -1.4em;
+  top: 0.5em;
+  transform: translateY(-25%);
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+  content: "\f178"
 }
 </style>

@@ -51,6 +51,7 @@ h1 {
 /* Width: 8.5in / 1/72in per pt / 12pt per em */
 /* Padding: 15mm, 22.5mm / (1/72 * 25.4mm) per pt / 12pt per em */
 #page {
+  box-sizing: border-box;
   width: 51rem;
   padding: 3.5433rem 5.3149rem;
   background-color: white;

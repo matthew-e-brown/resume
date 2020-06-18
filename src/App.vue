@@ -92,6 +92,10 @@ a:hover {
   color: rgb(0, 97, 209);
 }
 
+i {
+  color: rgb(66, 63, 63);
+}
+
 main>* {
   margin: 0.85rem 0;
 }

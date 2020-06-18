@@ -58,7 +58,7 @@ export default {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Pro";
-  font-weight: 400;
+  font-weight: 900;
   content: "\f178"
 }
 </style>

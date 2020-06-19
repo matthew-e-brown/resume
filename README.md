@@ -1,19 +1,23 @@
-# resume
+# My Resume
 
-## Project setup
-```
-npm install
-```
+I got fed up with screwing around with styles in Microsoft Word and decided to
+use CSS for my resume instead. Then I decided to make it with Vue because, 1) I
+wanted to use components and have a JSON-based system, basically what amounts to
+a theme, and 2) because I can! 🥳
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Running
 
-### Compiles and minifies for production
-```
-npm run build
+This is just a Vue app, so you can run it with
+
+```console
+$ npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+and build it with
+
+```console
+$ npm run build
+```
+
+The `CoverLetter.vue` view is not available in production &mdash; only when
+running locally.

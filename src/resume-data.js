@@ -27,7 +27,7 @@ export default {
       "Programming": {
         "Languages / General": `
           - Two most skilled languages are JavaScript and Python
-          - Intermediate to expert-range experience working with Python for scripting
+          - Intermediate experience working with Python for scripting
             - Intermediate Experience with Pygame
           - Experience with Bash/Shell scripting
           - Moderately experienced with C and C#
@@ -35,9 +35,9 @@ export default {
         `,
         "Web Development Specific": `
           - Expert experience with HTML, CSS, and JavaScript
-            - Intermediate experience with Flexbox, experience with CSS Grid
+            - Intermediate experience with Flexbox and CSS Grid
             - ECMAScript ES7+ knowhow and understanding
-            - Beginner with VueJS (this resume is a PDF print of [a Vue app](https://github.com/matthew-e-brown/Resume))
+          - Beginner with VueJS (this resume is [a Vue app](https://github.com/matthew-e-brown/Resume)!)
           - Experience with JavaScript for NodeJS/Server-side
             - Beginner with ExpressJS
           - Experience and familiarity with PHP
@@ -45,9 +45,9 @@ export default {
       },
       "Software": {
         "Linux, Git and Github": `
-          - Experience working with Linux VMs/webservers (Ubuntu, CentOS 7, LAMP)
+          - Experience Linux VMs/webservers (Ubuntu, CentOS 7, LAMP)
           - Very comfortable on the command line, including with Git
-          - Intermediate/Advanced experience with GitHub for collaboration
+          - Experience working with GitHub for collaboration
         `,
         "Other Software": `
           - "Atlassian, Microsoft Office, and Creative Cloud suites"
@@ -62,7 +62,7 @@ export default {
     },
     "Other Achievements": {
       "__no-header__": {
-        "DELF / DALF B1 Certified": `
+        "D.E.L.F. / D.A.L.F. B1 Certified": `
           Officially bilingual, certified by the <span lang="fr">minisère de l'éducation et de la jeunesse</span>.
         `,
       }

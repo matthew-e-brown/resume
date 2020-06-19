@@ -22,13 +22,15 @@ export default {
 
 <style scoped>
 h2 {
-  margin-block-start: -0.15rem;
   font-family: 'Catamaran', sans-serif;
   font-weight: 900;
   font-size: 1.2em;
-  letter-spacing: 0.24em;
   font-variant: small-caps;
+  letter-spacing: 0.2em;
+  line-height: 1.4rem;
+  margin: 0.25em -0.5rem 0.25em -0.5rem;
+  padding: 0 0.5rem;
   color: var(--header2);
-  border-bottom: 0.075rem solid var(--off-black);
+  border-bottom: 0.075rem solid var(--body);
 }
 </style>

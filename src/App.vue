@@ -37,26 +37,27 @@ h1 {
   --header1: rgb(0, 69, 134);
   --header2: rgb(0, 102, 204);
   --header3: rgb(118, 113, 113);
-  --off-black: rgb(18, 13, 13);
+  --body: rgb(18, 13, 13);
 }
 
 :root {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--off-black);
+  color: var(--body);
   background-color: rgb(220, 236, 252);
 }
 
+/* Measurements taken from the original print copy of my resume: */
 /* Width: 8.5in / 1/72in per pt / 12pt per em */
 /* Padding: 15mm, 22.5mm / (1/72 * 25.4mm) per pt / 12pt per em */
 #page {
   box-sizing: border-box;
   width: 51rem;
-  padding: 3.5433rem 5.3149rem;
+  /* No reason not to be as accurate as possible, right? */
+  padding: 3.54330708661417rem 5.31496062992126rem;
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 @media not print {
@@ -68,23 +69,26 @@ h1 {
 
 @media only print {
   :root { font-size: 12pt; background: none; }
-  body, #page { margin: 0; padding: 0; }
+  body, #page { margin: 0; }
   a { text-decoration-line: none; }
 
   @page {
     width: 8.5in;
     height: 11in;
-    margin: 15mm 22.5mm 15mm 22.5mm;
+    /* Padding on the #page takes care of margins, this lets me have
+     * border-lines and stuff jut into the margins of the page: */
+    margin: 0;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+ul, ol, p {
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
 a {
-  color: var(--off-black);
+  color: var(--body);
   transition: color 125ms ease-in-out;
 }
 
@@ -96,11 +100,11 @@ i {
   color: rgb(66, 63, 63);
 }
 
-main>* {
-  margin: 0.85rem 0;
+section {
+  margin: 0.85rem 0 1rem 0;
 }
 
-main>:last-child {
+section:last-child {
   margin-bottom: 0;
 }
 </style>

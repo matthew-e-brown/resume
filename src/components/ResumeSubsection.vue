@@ -1,6 +1,8 @@
 <template>
   <div class="subsection" :class="{ 'no-headers': !hasHeader }">
-    <h3 v-if="hasHeader">{{ header }}</h3>
+    <div v-if="hasHeader">
+      <h3>{{ header }}</h3>
+    </div>
     <div>
       <template v-for="([subheader, body], i) in Object.entries(content)">
         <h4 :key="`h4-${i}`">{{ subheader }}</h4>
@@ -9,6 +11,7 @@
           :source="body"
           :prerender="prerender"
           :anchorAttributes="{ target: '_blank' }"
+          class="body-text"
         />
       </template>
     </div>
@@ -41,11 +44,46 @@ export default {
 <style scoped>
 .subsection:not(.no-headers) {
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 7.25rem 1fr;
+}
+
+.subsection>* {
+  padding: 0.3rem;
+}
+.subsection>:first-child {
+  padding-left: 0;
+}
+
+.subsection>:last-child {
+  padding-right: 0;
+}
+
+.no-headers {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--header3);
+}
+
+h4 {
+  margin-bottom: 0.3em;
+}
+
+.body-text {
+  margin-bottom: 0.25em;
+}
+
+.body-text:last-child {
+  margin-bottom: 0;
 }
 
 * >>> ul {
   list-style-type: square;
+  padding-inline-start: 2.4em;
 }
 
 * >>> ul ul li {

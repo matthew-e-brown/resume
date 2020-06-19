@@ -65,7 +65,7 @@ export default {
   justify-self: left;
   padding: 0.15em 0 0.15em 0.5em;
   margin-right: 0.8em;
-  border-left: 0.075rem solid var(--off-black);
+  border-left: 0.075rem solid var(--body);
   white-space: nowrap;
   text-overflow: clip;
 }

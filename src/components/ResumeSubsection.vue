@@ -1,6 +1,6 @@
 <template>
-  <div class="subsection">
-    <h3>{{ header }}</h3>
+  <div class="subsection" :class="{ 'no-headers': !hasHeader }">
+    <h3 v-if="hasHeader">{{ header }}</h3>
     <div>
       <template v-for="([subheader, body], i) in Object.entries(content)">
         <h4 :key="`h4-${i}`">{{ subheader }}</h4>
@@ -20,6 +20,8 @@ import dedent from 'dedent-js';
 import VueMarkdown from 'vue-markdown';
 
 export default {
+  name: 'ResumeSubsection',
+  components: { VueMarkdown },
   props: {
     // Not going to be an ID this time, no regex needed:
     header: { required: true, type: String },
@@ -28,12 +30,16 @@ export default {
   methods: {
     prerender: str => dedent(str)
   },
-  components: { VueMarkdown }
+  computed: {
+    hasHeader: function() {
+      return this.header != '__no-header__'
+    }
+  }
 }
 </script>
 
 <style scoped>
-.subsection {
+.subsection:not(.no-headers) {
   display: grid;
   grid-template-columns: 3fr 7fr;
 }

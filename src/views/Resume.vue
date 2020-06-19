@@ -1,24 +1,16 @@
 <template>
   <main>
-    <ResumeSection title="Skills">
+    <ResumeSection
+      v-for="([header, section], i) in Object.entries(resume.body)"
+      :title="header"
+      :key="i"
+    >
       <ResumeSubsection
-        v-for="([header, content], i) in Object.entries(resume.skills)"
-        :header="header"
+        v-for="([subheader, content], j) in Object.entries(section)"
+        :header="subheader"
         :content="content"
-        :key="i"
+        :key="j"
       />
-    </ResumeSection>
-
-    <ResumeSection title="Education">
-      
-    </ResumeSection>
-
-    <ResumeSection title="Working Experience">
-
-    </ResumeSection>
-
-    <ResumeSection title="Other Achievements">
-
     </ResumeSection>
   </main>
 </template>

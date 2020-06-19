@@ -9,6 +9,7 @@
 export default {
   name: 'ResumeSection',
   props: {
+    // Title can only contain letters, spaces, dashes, and commas
     title: { required: true, type: String, validator: str => !/[^\w-, ]/g.test(str) }
   },
   data: function() {

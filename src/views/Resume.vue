@@ -1,7 +1,7 @@
 <template>
   <main>
     <ResumeSection
-      v-for="([header, section], i) in Object.entries(resume.body)"
+      v-for="([header, section], i) in Object.entries(resume)"
       :title="header"
       :key="i"
     >
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ResumeData from '@/resume-data';
+import { content } from '@/resume-data';
 import ResumeSection from '@/components/ResumeSection';
 import ResumeSubsection from '@/components/ResumeSubsection';
 
@@ -25,7 +25,7 @@ export default {
   components: { ResumeSection, ResumeSubsection },
   data: function() {
     return {
-      resume: ResumeData
+      resume: content
     }
   }
 }

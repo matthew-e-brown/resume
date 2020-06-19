@@ -1,16 +1,18 @@
 <template>
-  <div class="subsection" :class="{ 'no-headers': !hasHeader }">
-    <div v-if="hasHeader">
-      <h3>{{ header }}</h3>
+  <div class="subsection" :class="{ 'no-header': noHeader(header) }">
+    <div v-if="!noHeader(header)">
+      <h3 v-html="header"></h3>
     </div>
     <div>
       <template v-for="([subheader, body], i) in Object.entries(content)">
-        <h4 :key="`h4-${i}`">{{ subheader }}</h4>
+        <h4 v-if="!noHeader(subheader)" v-html="subheader" :key="`h4-${i}`"></h4>
         <VueMarkdown
           :key="i"
           :source="body"
           :prerender="prerender"
           :anchorAttributes="{ target: '_blank' }"
+          :linkify="false"
+          :class="{ 'no-header': noHeader(subheader) }"
           class="body-text"
         />
       </template>
@@ -31,18 +33,14 @@ export default {
     content: { required: true, type: Object }
   },
   methods: {
-    prerender: str => dedent(str)
-  },
-  computed: {
-    hasHeader: function() {
-      return this.header != '__no-header__'
-    }
+    prerender: str => dedent(str),
+    noHeader: str => str == '__no-header__'
   }
 }
 </script>
 
 <style scoped>
-.subsection:not(.no-headers) {
+.subsection:not(.no-header) {
   display: grid;
   grid-template-columns: 7.25rem 1fr;
 }
@@ -69,12 +67,8 @@ h3 {
   color: var(--header3);
 }
 
-h4 {
-  margin-bottom: 0.3em;
-}
-
 .body-text {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.4em;
 }
 
 .body-text:last-child {
@@ -101,8 +95,10 @@ h4 {
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  content: "\f178";
   font-family: "Font Awesome 5 Pro";
-  font-weight: 900;
-  content: "\f178"
+  /* content: "\f30b";
+  font-family: "Font Awesome 5 Free"; */
 }
 </style>

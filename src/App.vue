@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ResumeData from '@/resume-data';
+import { name, contact } from '@/resume-data';
 import ContactGrid from '@/components/ContactGrid';
 
 export default {
@@ -15,8 +15,8 @@ export default {
   components: { ContactGrid },
   data: function() {
     return {
-      name: ResumeData.name,
-      contact: ResumeData.contact,
+      name,
+      contact,
       prod: (process.env.NODE_ENV === 'production')
     }
   }

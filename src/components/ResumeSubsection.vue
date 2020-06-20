@@ -12,6 +12,7 @@
           :prerender="prerender"
           :anchorAttributes="{ target: '_blank' }"
           :linkify="false"
+          :breaks="false"
           :class="{ 'no-header': noHeader(subheader) }"
           class="body-text"
         />

@@ -117,13 +117,14 @@ export const content = {
       `,
     }
   },
-  "Interests and Hobbies": {
+  "Notable Interests and Hobbies": {
     "__no-header__": {
-      "__no-header__": `
-      - Some bullets
-      `
+      "Japanese": `
+      Learning the Japanese language out of interest in the culture as well as
+      to keep my brain active during time off. <span lang="jp">こんにちは！</span>
+      `,
     }
-  }
+  },
 }
 
 export default { name, contact, content }

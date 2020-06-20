@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .subsection {
-  break-inside: avoid-page;
+  break-inside: avoid;
   break-before: auto;
   break-after: auto;
 }
@@ -68,7 +68,7 @@ export default {
   padding-right: 0;
 }
 
-.no-headers {
+.no-header {
   padding-left: 0;
   padding-right: 0;
 }
@@ -77,6 +77,10 @@ h3 {
   font-size: 1rem;
   font-weight: 400;
   color: var(--header3);
+}
+
+h4 {
+  margin-bottom: 0.1em;
 }
 
 .body-text {

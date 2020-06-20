@@ -9,13 +9,12 @@
 export default {
   name: 'ResumeSection',
   props: {
-    // Title can only contain letters, spaces, dashes, commas, and apostrophes
-    title: { required: true, type: String, validator: str => !/[^\w-,' ]/g.test(str) }
+    title: { required: true, type: String }
   },
   data: function() {
     return {
       header: this.title,
-      ID: this.title.toLowerCase().replace(/[ ,]+/g, '-').replace(/'/g, '')
+      ID: this.title.toLowerCase().replace(/[^\w]+/g, '-').replace(/[^\w]+$/g, '')
     }
   }
 }

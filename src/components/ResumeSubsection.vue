@@ -68,11 +68,6 @@ export default {
   padding-right: 0;
 }
 
-.no-header {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 h3 {
   font-size: 1rem;
   font-weight: 400;
@@ -89,6 +84,15 @@ h4 {
 
 .body-text:last-child {
   margin-bottom: 0;
+}
+
+.no-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.subsection+.no-header {
+  margin-top: 0.275em;
 }
 
 /* Styling within the VueMarkdown component */

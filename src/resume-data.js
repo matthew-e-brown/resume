@@ -38,22 +38,23 @@ export const contact = {
 export const content = {
   "Skills": {
     "Programming": {
-      "Languages / General": `
+      "Web Development Specific": `
+        - Expert experience with HTML, CSS, and JavaScript
+          - Intermediate experience with Flexbox and CSS Grid
+          - ECMAScript ES7+ knowhow and understanding
+        - Beginner with VueJS (this resume is a PDF print of
+          [a Vue app](https://github.com/matthew-e-brown/Resume)!)
+        - Experience with JavaScript for NodeJS/Server-side
+          - Beginner with ExpressJS
+        - Experience and familiarity with PHP
+      `,
+      "General": `
         - Two most skilled languages are JavaScript and Python
         - Intermediate experience working with Python for scripting
           - Intermediate Experience with Pygame
         - Experience with Bash/Shell scripting
         - Moderately experienced with C and C#
         - Beginner experience and moderate familiarity with Java
-      `,
-      "Web Development Specific": `
-        - Expert experience with HTML, CSS, and JavaScript
-          - Intermediate experience with Flexbox and CSS Grid
-          - ECMAScript ES7+ knowhow and understanding
-        - Beginner with VueJS (this resume is [a Vue app](https://github.com/matthew-e-brown/Resume)!)
-        - Experience with JavaScript for NodeJS/Server-side
-          - Beginner with ExpressJS
-        - Experience and familiarity with PHP
       `,
     },
     "Software": {
@@ -70,60 +71,60 @@ export const content = {
   "Education": {
     "2018-pres.": {
       "Trent University": `
-      B.Sc (Hon): Computer Science with Co-op &mdash; 86.25% average
-      - *Systems Programming* (COIS-3380H)
-        - C programming and bash scripting
-      - *Web Application Development* (COIS-3420H)
-        - Backend, front-end, no-framework web-dev (full-stack)
-      - *Modelling and Simulation* (COIS-4470H)
-        - Discrete-event and Monte-Carlo simulations in Python
+        B.Sc (Hon): Computer Science with Co-op &mdash; 86.25% average
+        - *Systems Programming* (COIS-3380H)
+          - C programming and bash scripting
+        - *Web Application Development* (COIS-3420H)
+          - Backend, front-end, no-framework web-dev (full-stack)
+        - *Modelling and Simulation* (COIS-4470H)
+          - Discrete-event and Monte-Carlo simulations in Python
       `,
-    }
+    },
   },
   "Working Experience": {
     "Placements": {
       "Intern / Co-op &mdash; TD Wealth Technology Solutions": `
-      Tech support for Wealth Money Movement team. Worked primarily with
-      Splunk Enterprise for data monitoring and creating dashboards.
-      - September 2019 to December 2019
+        Tech support for Wealth Money Movement team. Worked primarily with
+        Splunk Enterprise for data monitoring and creating dashboards.
+        - September 2019 to December 2019
       `,
     },
     "Part-Time": {
       "Work-Study Position &mdash; Trent University": `
-      Assitant to the lab demonstrator. TA-ing and creating lab content for
-      the *Web Application Development* (COIS-3420H) course.
-      - January 2020 to April 2020
+        Assitant to the lab demonstrator. TA-ing and creating lab content for
+        the *Web Application Development* (COIS-3420H) course.
+        - January 2020 to April 2020
       `,
       "Course Content Creator &mdash; Trent University": `
-      Created lab content for *Digital World* (COIS-1010H), introduced a
-      web-based format for Trent COIS labs.
-      - July 2019 to August 2019
+        Created lab content for *Digital World* (COIS-1010H), introduced a
+        web-based format for Trent COIS labs.
+        - July 2019 to August 2019
       `,
       "Course Marker &mdash; Trent University": `
-      Marked for *Programming for Computer Systems* (COIS-1020H).
-      - January 2019 to April 2019
+        Marked for *Programming for Computer Systems* (COIS-1020H).
+        - January 2019 to April 2019
       `,
       "Technology Sales Associate &mdash; Staples Canada": `
-      Sold laptops, desktops, printers, tablets, and smartphones with
-      warranties, services, and accessories.
-      - August 2016 to August 2018
+        Sold laptops, desktops, printers, tablets, and smartphones with
+        warranties, services, and accessories.
+        - August 2016 to August 2018
       `,
     }
   },
   "Other Achievements": {
-    "__no-header__": {
+    "Languages": {
+      "__no-header__": `
+        **English** &mdash; Native language, full comprehension and speaking  
+        **French** &mdash; Near full comprehension, good speaking  
+        **Japanese** &mdash; Basic comprehension, minimal speaking
+      `,
+    },
+    "Awards": {
       "D.E.L.F. / D.A.L.F. B1 Certified": `
-        Officially bilingual, certified by the <span lang="fr">minisère de l'éducation et de la jeunesse</span>.
+        Officially bilingual, certified by the <span lang="fr">minisère de
+        l'éducation et de la jeunesse</span>.
       `,
-    }
-  },
-  "Notable Interests and Hobbies": {
-    "__no-header__": {
-      "Japanese": `
-      Learning the Japanese language out of interest in the culture as well as
-      to keep my brain active during time off. <span lang="jp">こんにちは！</span>
-      `,
-    }
+    },
   },
 }
 

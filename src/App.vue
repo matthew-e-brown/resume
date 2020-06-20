@@ -14,11 +14,7 @@ export default {
   name: 'Page',
   components: { ContactGrid },
   data: function() {
-    return {
-      name,
-      contact,
-      prod: (process.env.NODE_ENV === 'production')
-    }
+    return { name, contact }
   }
 }
 </script>

@@ -1,7 +1,17 @@
 {
   "name": "resume",
+  "author": "Matthew Brown <matthew.e.brown.17@gmail.com> (https://github.com/matthew-e-brown)",
+  "description": "A VueJS app to make a pretty resume out of some resume data.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthew-e-brown/Resume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matthew-e-brown/Resume/issues"
+  },
+  "homepage": "https://github.com/matthew-e-brown/Resume#readme",
+  "license": "MIT",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"

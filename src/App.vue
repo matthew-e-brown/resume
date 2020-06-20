@@ -66,7 +66,10 @@ h1 {
 @media only print {
   :root { font-size: 12pt; background: none; }
   body { margin: 0; }
-  a { text-decoration-line: none; }
+
+  a[href^="mailto:"], a[href^="tel:"] {
+    text-decoration-line: none;
+  }
 
   /* (See below) these two need to be done with @page margins to make
    * page-breaks happen in proper places */

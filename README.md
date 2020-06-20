@@ -39,7 +39,7 @@ the steps required to use FontAwesome with a package manager:
 [FontAwesome Docs][1]
 
 If you don't, here's how to get it working (you're going to have a slightly
-different bullet point `long-arrow-alt-right` instead of `long-arrow-right`):
+different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
 
 1.  Uninstall `@fortawesome/font-awesome-pro`, and install
     `@fortawesome/font-awesome-free`:

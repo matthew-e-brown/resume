@@ -14,13 +14,15 @@
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.13.1",
     "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
     "dedent-js": "^1.0.1",
+    "gh-pages": "^3.0.0",
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.11",
     "vue-markdown": "^2.2.4",

@@ -1,17 +1,21 @@
 # My Resume
 
 I got fed up with screwing around with styles in Microsoft Word and decided to
-use CSS for my resume instead. Then I decided to make it with Vue because, 1) I
-wanted to use components and have a JSON-based system, basically what amounts to
-a theme, and 2) because I can! 🥳
+use CSS for my resume instead. Then, I decided to make it with Vue because, 1) I
+wanted to use components and 2) because I can! 🥳
 
 
 ## Usage
 
-If you like the look of my resume, Feel free to fork this repository and use
-this resume's theme as your own! Everything on it can be tweaked simply by
-editing [`resume-data.js`](src/resume-data.js). It should be fairly
-self-explanatory.
+If you like the look of my resume, feel free to fork this repository and use
+this resume's theme as your own! I would be flatterd if you did. 😊
+
+Everything on it can be tweaked simply by editing
+[`resume-data.js`](src/resume-data.js). See the [Data](#data) section for
+details.
+
+
+### Running
 
 This is just a Vue app, so you can install and run it with
 
@@ -32,18 +36,38 @@ running locally.
 
 ### Data
 
+#### Body
+
+When making this resume, I always got stuck with my own layout formula. Here's a
+quick cheatsheet:
+
+```javascript
+export const body = {
+  "Blue, underlined (h2)": {
+    "Light gray, off to the side (h3)": {
+      "Black, within the subsection (h4)": `
+        Parsed markdown text. Text is automatically dedented.
+      `,
+    },
+  },
+};
+```
+
+
+#### Contact
+
 For the most part, `resume-data.js` is pretty easy to follow. But, the `contact`
-object, used for the grid of URLs, Phone numbers, etc. at the top of the page,
-has some additional possibilies.
+object (used for the grid of URLs, phone numbers, and other information at the
+top of the page) has some additional possibilies.
 
 For the most basic usage, this is probably all you need:
 
 ```javascript
 export const contact = {
-    service: {
-        url: 'https://example.com',
-        display: 'Text to display in <a>'
-    },
+  service: {
+    url: 'https://example.com',
+    display: 'Text to display in <a>'
+  },
 };
 ```
 
@@ -70,11 +94,7 @@ instead. By default, `fas` (solid style) will be used. If you'd prefer another
 style, like `fal` (light style), you can specify and `iconStyle` in the object.
 
 Finally, if you'd prefer to not have any grid of contact information, you can
-simply set
-
-```javascript
-export const contact = false;
-```
+simply set `contact` as a whole to `false`.
 
 
 ### FontAwesome
@@ -109,7 +129,7 @@ different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
       content: "\f30b";
     }
     ```
-4.  Done! Make sure to commit to your fork.
+4.  Done!
 
 
 [1]: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro

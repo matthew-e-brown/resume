@@ -1,0 +1,34 @@
+{
+  "name": "resume",
+  "author": "Matthew Brown <matthew.e.brown.17@gmail.com> (https://github.com/matthew-e-brown)",
+  "description": "A VueJS app to make a pretty resume out of some resume data.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthew-e-brown/Resume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matthew-e-brown/Resume/issues"
+  },
+  "homepage": "https://github.com/matthew-e-brown/Resume#readme",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.13.1",
+    "babel-runtime": "^6.26.0",
+    "core-js": "^3.6.5",
+    "dedent-js": "^1.0.1",
+    "vue": "^2.6.11",
+    "vue-markdown": "^2.2.4",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-router": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

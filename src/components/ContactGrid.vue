@@ -57,7 +57,7 @@ export default {
   align-items: center;
 }
 
-.contact-entry i {
+.contact-entry svg {
   font-size: 1.25em;
 }
 

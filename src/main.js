@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+
+import 'typeface-catamaran';
+import 'typeface-open-sans';
 import '@fortawesome/fontawesome-pro/css/all.min.css';
 import '@fortawesome/fontawesome-pro/js/all.min.js';
 

@@ -48,10 +48,21 @@ different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
     $ npm install --save @fortawesome/font-awesome-free
     ```
 2.  Go to [`main.js`](src/main.js) and change the imports from
-    `font-awesome-pro` to `font-awesome-free`
+    `font-awesome-pro` to `font-awesome-free`:
+    ```javascript
+    import '@fortawesome/fontawesome-{pro => free}/css/all.min.css';
+    import '@fortawesome/fontawesome-{pro => free}/js/all.min.js';
+    ```
 3.  Head to [`ResumeSubsection.vue`](src/components/ResumeSubsection.vue) and
-    get change the `content` and `font-family` declarations to the alternate,
-    free versions (I've left them there, commented).
+    get change the `content` and `font-family` declarations at the bottom of the
+    file to the following:
+    ```css
+    * >>> ul ul li::before {
+      /* ... */
+      font-family: "Font Awesome 5 Free";
+      content: "\f30b";
+    }
+    ```
 4.  Done! Make sure to commit to your fork.
 
 

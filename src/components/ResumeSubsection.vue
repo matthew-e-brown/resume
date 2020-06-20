@@ -117,9 +117,7 @@ h4 {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  content: "\f178";
   font-family: "Font Awesome 5 Pro";
-  /* content: "\f30b";
-  font-family: "Font Awesome 5 Free"; */
+  content: "\f178";
 }
 </style>

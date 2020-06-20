@@ -40,6 +40,16 @@ export default {
 </script>
 
 <style scoped>
+.subsection {
+  break-inside: avoid-page;
+  break-before: auto;
+  break-after: auto;
+}
+
+.subsection:first-of-type {
+  break-before: avoid-page;
+}
+
 .subsection:not(.no-header) {
   display: grid;
   grid-template-columns: 7.25rem 1fr;
@@ -48,6 +58,7 @@ export default {
 .subsection>* {
   padding: 0.3rem;
 }
+
 .subsection>:first-child {
   padding-left: 0;
 }
@@ -75,6 +86,7 @@ h3 {
   margin-bottom: 0;
 }
 
+/* Styling within the VueMarkdown component */
 * >>> ul {
   list-style-type: square;
   padding-inline-start: 2.4em;

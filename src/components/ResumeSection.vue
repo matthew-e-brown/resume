@@ -9,19 +9,23 @@
 export default {
   name: 'ResumeSection',
   props: {
-    // Title can only contain letters, spaces, dashes, and commas
-    title: { required: true, type: String, validator: str => !/[^\w-, ]/g.test(str) }
+    // Title can only contain letters, spaces, dashes, commas, and apostrophes
+    title: { required: true, type: String, validator: str => !/[^\w-,' ]/g.test(str) }
   },
   data: function() {
     return {
       header: this.title,
-      ID: this.title.toLowerCase().replace(/[ ,]+/g, '-')
+      ID: this.title.toLowerCase().replace(/[ ,]+/g, '-').replace(/'/g, '')
     }
   }
 }
 </script>
 
 <style scoped>
+section {
+  break-inside: avoid-page;
+}
+
 h2 {
   font-family: 'Catamaran', sans-serif;
   font-weight: 900;
@@ -33,5 +37,7 @@ h2 {
   padding: 0 0.5rem;
   color: var(--header2);
   border-bottom: 0.075rem solid var(--body);
+  break-before: avoid-page;
+  break-after: avoid-page;
 }
 </style>

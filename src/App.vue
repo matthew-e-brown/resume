@@ -69,15 +69,23 @@ h1 {
 
 @media only print {
   :root { font-size: 12pt; background: none; }
-  body, #page { margin: 0; }
+  body { margin: 0; }
   a { text-decoration-line: none; }
+
+  /* (See below) these two need to be done with @page margins to make
+   * page-breaks happen in proper places */
+  #page {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   @page {
     width: 8.5in;
     height: 11in;
-    /* Padding on the #page takes care of margins, this lets me have
-     * border-lines and stuff jut into the margins of the page: */
-    margin: 0;
+    /* The margin on #page div takes care of the margins, since doing it that
+     * way lets me having things (like the h2 borders) just out into the margins
+     * of the actual @page */
+    margin: 15mm 0;
   }
 }
 

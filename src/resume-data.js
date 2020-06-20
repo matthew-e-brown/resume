@@ -1,6 +1,16 @@
 export const name = "Matthew Brown";
 
 /* Supported Social (font-awesome) Icons:
+| Object Key    | Icon                |
+| : ----------- | :-------------------|
+| phone         | fa-phone            |
+| mobile        | fa-mobile           |
+| email         | fa-paper-plane      |
+| github        | fa-github           |
+| twitter       | fa-twitter          |
+| linkedin      | fa-linkedin         |
+| stackoverflow | fa-stack-overflow   |
+| all others    | fa-globe            |
 */
 export const contact = {
   github: {
@@ -66,7 +76,7 @@ export const content = {
       - *Web Application Development* (COIS-3420H)
         - Backend, front-end, no-framework web-dev (full-stack)
       - *Modelling and Simulation* (COIS-4470H)
-        - Discrete-event and Monte Carlo simulations in Python
+        - Discrete-event and Monte-Carlo simulations in Python
       `,
     }
   },
@@ -93,7 +103,7 @@ export const content = {
       Marked for *Programming for Computer Systems* (COIS-1020H).
       - January 2019 to April 2019
       `,
-      "Technology Sales Associate &dmash; Staples Canada": `
+      "Technology Sales Associate &mdash; Staples Canada": `
       Sold laptops, desktops, printers, tablets, and smartphones with
       warranties, services, and accessories.
       - August 2016 to August 2018

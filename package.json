@@ -17,6 +17,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.13.1",
     "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
     "dedent-js": "^1.0.1",

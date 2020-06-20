@@ -6,13 +6,12 @@ wanted to use components and have a JSON-based system, basically what amounts to
 a theme, and 2) because I can! 🥳
 
 
-## Running
+## Usage
 
 If you like the look of my resume, Feel free to fork this repository and use
 this resume's theme as your own! Everything on it can be tweaked simply by
-editing [`resume-data.js`](src/resume-data.js). If you don't like the colours of
-the headers, they're CSS variables and can be changed in the CSS of
-[`App.vue`](src/App.vue).
+editing [`resume-data.js`](src/resume-data.js). It should be fairly
+self-explanatory.
 
 This is just a Vue app, so you can install and run it with
 
@@ -29,6 +28,53 @@ $ npm run build
 
 The `CoverLetter.vue` view is not available in production &mdash; only when
 running locally.
+
+
+### Data
+
+For the most part, `resume-data.js` is pretty easy to follow. But, the `contact`
+object, used for the grid of URLs, Phone numbers, etc. at the top of the page,
+has some additional possibilies.
+
+For the most basic usage, this is probably all you need:
+
+```javascript
+export const contact = {
+    service: {
+        url: 'https://example.com',
+        display: 'Text to display in <a>'
+    },
+};
+```
+
+The `url` field can be omitted if it isn't necessary. This will remove the
+hyperlink and just use text.
+
+By default, the following are recognized as services and have the proper
+FontAwesome icons set:
+
+| Key in the Object   | FontAwesome Icon          |
+| :------------------ | :------------------------ |
+| `phone`             | `fa-phone-alt`            |
+| `mobile`            | `fa-mobile`               |
+| `email`             | `fa-paper-plane`          |
+| `github`            | `fa-github`               |
+| `twitter`           | `fa-twitter`              |
+| `linkedin`          | `fa-linkedin`             |
+| `stackoverflow`     | `fa-stack-overflow`       |
+| all others          | `fa-external-link-square` |
+
+However, if you don't like these, you can specify `icon` and pass in a valid
+FontAwesome icon name (including the `fa-` prefix), and you'll get that icon
+instead. By default, `fas` (solid style) will be used. If you'd prefer another
+style, like `fal` (light style), you can specify and `iconStyle` in the object.
+
+Finally, if you'd prefer to not have any grid of contact information, you can
+simply set
+
+```javascript
+export const contact = false;
+```
 
 
 ### FontAwesome

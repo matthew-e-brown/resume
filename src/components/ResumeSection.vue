@@ -1,11 +1,13 @@
 <template>
   <section :id="`${ID}-section`">
-    <h2 :id="ID">{{ header }}</h2>
+    <h2 :id="ID" :style="{ color }">{{ header }}</h2>
     <slot></slot>
   </section>
 </template>
 
 <script>
+import { headerColor } from '@/resume-data';
+
 export default {
   name: 'ResumeSection',
   props: {
@@ -13,6 +15,7 @@ export default {
   },
   data: function() {
     return {
+      color: headerColor,
       header: this.title,
       ID: this.title.toLowerCase().replace(/[^\w]+/g, '-').replace(/[^\w]+$/g, '')
     }
@@ -34,8 +37,8 @@ h2 {
   line-height: 1.4rem;
   margin: 0.25em -0.5rem 0.25em -0.5rem;
   padding: 0 0.5rem;
-  color: var(--header2);
-  border-bottom: 0.075rem solid var(--body);
+  color: rgb(0, 102, 204);
+  border-bottom: 0.075rem solid rgb(18, 13, 13);
   break-before: avoid-page;
   break-after: avoid-page;
 }

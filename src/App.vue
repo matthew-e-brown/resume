@@ -1,20 +1,24 @@
 <template>
   <div id="page">
-    <h1>{{ name }}</h1>
-    <ContactGrid :contact="contact" />
+    <h1 :style="{ color }">{{ name }}</h1>
+    <ContactGrid v-if="contact !== false" :contact="contact" />
     <router-view />
   </div>
 </template>
 
 <script>
-import { name, contact } from '@/resume-data';
+import { name, contact, titleColor } from '@/resume-data';
 import ContactGrid from '@/components/ContactGrid';
 
 export default {
   name: 'Page',
   components: { ContactGrid },
   data: function() {
-    return { name, contact }
+    return {
+      name,
+      contact,
+      color: titleColor
+    }
   }
 }
 </script>
@@ -24,23 +28,16 @@ h1 {
   font-family: 'Catamaran', sans-serif;
   font-weight: 900;
   font-size: 2.83em;
-  color: var(--header1);
+  color: rgb(0, 69, 134);
 }
 </style>
 
 <style>
 :root {
-  --header1: rgb(0, 69, 134);
-  --header2: rgb(0, 102, 204);
-  --header3: rgb(118, 113, 113);
-  --body: rgb(18, 13, 13);
-}
-
-:root {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--body);
+  color:rgb(18, 13, 13);
   background-color: rgb(220, 236, 252);
 }
 
@@ -95,7 +92,7 @@ ul, ol, p {
 }
 
 a {
-  color: var(--body);
+  color: rgb(18, 13, 13);
   transition: color 125ms ease-in-out;
 }
 

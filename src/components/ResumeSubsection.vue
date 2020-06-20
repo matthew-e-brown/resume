@@ -71,7 +71,7 @@ export default {
 h3 {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--header3);
+  color: rgb(118, 113, 113);
 }
 
 h4 {

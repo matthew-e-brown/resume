@@ -1,17 +1,9 @@
+// Use any valid CSS colour:
+export const titleColor = '#004586';
+export const headerColor = '#0066cc';
+
 export const name = "Matthew Brown";
 
-/* Supported Social (font-awesome) Icons:
-| Object Key    | Icon                |
-| : ----------- | :-------------------|
-| phone         | fa-phone            |
-| mobile        | fa-mobile           |
-| email         | fa-paper-plane      |
-| github        | fa-github           |
-| twitter       | fa-twitter          |
-| linkedin      | fa-linkedin         |
-| stackoverflow | fa-stack-overflow   |
-| all others    | fa-globe            |
-*/
 export const contact = {
   github: {
     url: "https://github.com/matthew-e-brown",

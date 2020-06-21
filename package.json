@@ -24,6 +24,7 @@
     "dedent-js": "^1.0.1",
     "gh-pages": "^3.0.0",
     "prerender-spa-plugin": "^3.4.0",
+    "raw-loader": "^4.0.1",
     "typeface-catamaran": "0.0.72",
     "typeface-open-sans": "0.0.75",
     "vue": "^2.6.11",

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { name, contact, titleColor } from '@/resume-data';
+import { name, contact, titleColor } from '@/resume';
 import ContactGrid from '@/components/ContactGrid';
 
 export default {

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Resume from '@/views/Resume.vue';
 
-import { name } from '@/resume-data';
+import { name } from '@/resume';
 
 Vue.use(VueRouter);
 

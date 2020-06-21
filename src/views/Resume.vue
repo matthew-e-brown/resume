@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { content } from '@/resume-data';
+import { content } from '@/resume';
 import ResumeSection from '@/components/ResumeSection';
 import ResumeSubsection from '@/components/ResumeSubsection';
 

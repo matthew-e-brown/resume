@@ -104,8 +104,12 @@ svg {
   color: rgb(66, 63, 63);
 }
 
+main {
+  margin-top: 0.85rem;
+}
+
 section {
-  margin: 0.85rem 0 1rem 0;
+  margin: 0.85rem 0 1rem;
 }
 
 section:last-child {

@@ -118,6 +118,6 @@ export const content = {
       `,
     },
   },
-}
+};
 
 export default { name, contact, content }

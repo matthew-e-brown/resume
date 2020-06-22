@@ -1,8 +1,14 @@
 <template>
   <main>
-    <VueMarkdown id="intro-text" :source="greeting" v-bind="markdownProps" />
-    <VueMarkdown id="body-text" :source="body" v-bind="markdownProps" />
-    <VueMarkdown id="outro-text" :source="signoff" v-bind="markdownProps" />
+    <VueMarkdown
+      id="body-text"
+      :source="body"
+      :prerender="prerender"
+      :postrender="postrender"
+      :anchorAttributes="{ target: '_blank' }"
+      :linkify="false"
+      :breaks="false"
+    />
   </main>
 </template>
 
@@ -15,39 +21,19 @@ export default {
   components: { VueMarkdown },
   data: function() {
     return {
-      greeting: '',
-      signoff: '',
-      body: '',
-      markdownProps: {
-        prerender: this.prerender,
-        anchorAttributes: { target: '_blank' },
-        linkify: false,
-        breaks: false
-      }
+      body: ''
     };
   },
   methods: {
-    prerender: function(str) {
-      return dedent(str).trim();
-    }
+    prerender: str => dedent(str).trim(),
+    postrender: str => str.replace(/<p>\s*?\/\/! ?/g, `<p class="no-indent">`)
   },
   mounted: function() {
     try {
       this.body = require('@/cover-letter.md').default;
     } catch (err) {
       this.body = `Could not load \`src/cover-letter.md\`. Did you create the file?`;
-      return;
     }
-
-    this.body = this.body
-      .replace(/<!-- (greeting|signoff|intro|outro) -->\r?\n(.+)\r?\n<!-- \1 -->/gs, (...args) => {
-        const [ , spot, text ] = args;
-        switch (spot) {
-          case 'intro': case 'greeting': this.greeting = text; break;
-          case 'outro': case 'signoff': this.signoff = text; break;
-        }
-        return '';
-      });
   }
 }
 </script>
@@ -58,5 +44,18 @@ main {
   padding: 0.9rem 1rem 0;
   margin-right: -0.5rem;
   margin-left: -0.5rem;
+}
+
+#body-text :not(.no-indent) {
+  text-indent: 2em;
+}
+
+* >>> p {
+  margin-top: 0.5em;
+}
+
+* >>> ol, * >>> ul,
+* >>> ol + p, * >>> ul + p {
+  margin-top: 0.35em;
 }
 </style>

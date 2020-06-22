@@ -85,10 +85,13 @@ h1 {
   }
 }
 
+/* Small CSS Reset */
 h1, h2, h3, h4, h5, h6,
 ul, ol, p {
   margin-block-start: 0;
+  margin-top: 0;
   margin-block-end: 0;
+  margin-bottom: 0;
 }
 
 a {

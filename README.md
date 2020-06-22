@@ -47,14 +47,15 @@ in the `/cover-letter` route. **If I were you, I would create this file
 regardless of whether you're going to write a cover letter**. Unless you don't
 mind Webpack constantly giving you a warning in your `npm run serve` console.
 
-The only thing to note is that I have included some custom syntax (as in, the
-rendered markdown text is run throug a regular expression): If you start a
-paragraph with `//!`, that paragraph will have no text-indent. This is useful
-for omitting the indent after a `ul` or `ol`, or, more likely, at the bottom and
-top for greetings and signoffs.
+
+#### Custom Syntax &mdash; Non-indented paragraphs
+
+If you start a paragraph with `//!`, that paragraph will have no text-indent.
+This is useful for omitting the indent after a `ul` or `ol`, or, more likely, at
+the bottom and top for greetings and signoffs.
 
 ```markdown
-//! Dear *Company President:
+//! Dear Company President:
 
 I think I'm a great fit for this position. Here's why...
 

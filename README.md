@@ -31,8 +31,40 @@ $ npm run build
 ```
 
 The `CoverLetter.vue` view is not available in production &mdash; only when
-running locally.
+running locally. See directly [below](#cover-letter).
 
+
+### Cover Letter
+
+When I write my cover letters, I like for them to have the same header/theme as
+my resume. So, I've included a second view in this project which allows me to do
+just that. This view is not rendered in production, meaning that even if you
+have something written, it won't show up when you deploy it to GitHub pages.
+
+To create a cover letter, simply create a `src/cover-letter.md` file, and start
+writing in it. The contents of this file will automatically appear as body-text
+in the `/cover-letter` route. **If I were you, I would create this file
+regardless of whether you're going to write a cover letter**. Unless you don't
+mind Webpack constantly giving you a warning in your `npm run serve` console.
+
+The only thing to note is that I have included some custom syntax (as in, the
+rendered markdown text is run throug a regular expression): If you start a
+paragraph with `//!`, that paragraph will have no text-indent. This is useful
+for omitting the indent after a `ul` or `ol`, or, more likely, at the bottom and
+top for greetings and signoffs.
+
+```markdown
+//! Dear *Company President:
+
+I think I'm a great fit for this position. Here's why...
+
+//! &mdash;  <!-- Linebreak with double-spaces enabled -->
+Matt
+```
+
+Markdown didn't really have anything that would let me do this without
+complicating the structure of the DOM or something, so I just ran it through a
+simple regular expression.
 
 ### Data
 

@@ -125,9 +125,25 @@ However, if you don't like these, you can specify `icon` and pass in a valid
 FontAwesome icon name (including the `fa-` prefix), and you'll get that icon
 instead. By default, `fas` (solid style) will be used. If you'd prefer another
 style, like `fal` (light style), you can specify and `iconStyle` in the object.
+For example:
+
+```javascript
+export const contact = {
+  website: {
+    url: "https://my.website.io",
+    display: "My Personal Site",
+    icon: "fa-magic",
+    iconStyle: "far"
+  }
+}
+```
 
 Finally, if you'd prefer to not have any grid of contact information, you can
-simply set `contact` as a whole to `false`.
+simply set `contact` as a whole to `false`:
+
+```javascript
+export const contact = false;
+```
 
 
 ### FontAwesome

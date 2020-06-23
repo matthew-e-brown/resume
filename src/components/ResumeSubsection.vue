@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import dedent from 'dedent-js';
+import dedent from 'dedent';
 import VueMarkdown from 'vue-markdown';
 
 export default {

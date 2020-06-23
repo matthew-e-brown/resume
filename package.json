@@ -21,7 +21,7 @@
     "@fortawesome/fontawesome-pro": "^5.13.1",
     "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
-    "dedent-js": "^1.0.1",
+    "dedent": "^0.7.0",
     "gh-pages": "^3.0.0",
     "prerender-spa-plugin": "^3.4.0",
     "raw-loader": "^4.0.1",

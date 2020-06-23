@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import dedent from 'dedent-js';
 import VueMarkdown from 'vue-markdown';
 
 export default {
@@ -25,7 +24,7 @@ export default {
     };
   },
   methods: {
-    prerender: str => dedent(str).trim(),
+    prerender: str => str.trim(),
     postrender: str => str.replace(/<p>\s*?\/\/! ?/g, `<p class="no-indent">`)
   },
   mounted: function() {
@@ -46,7 +45,7 @@ main {
   margin-left: -0.5rem;
 }
 
-#body-text :not(.no-indent) {
+* >>> p:not(.no-indent) {
   text-indent: 2em;
 }
 
@@ -57,5 +56,10 @@ main {
 * >>> ol, * >>> ul,
 * >>> ol + p, * >>> ul + p {
   margin-top: 0.35em;
+}
+
+* >>> ol ol, * >>> ol ul,
+* >>> ul ol, * >>> ul ul {
+  margin-top: 0;
 }
 </style>

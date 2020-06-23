@@ -56,7 +56,7 @@ export const content = {
         - Experience working with GitHub for collaboration
       `,
       "Other Software": `
-        - "Atlassian, Microsoft Office, and Creative Cloud suites"
+        - Atlassian, Microsoft Office, and Creative Cloud suites
       `,
     }
   },

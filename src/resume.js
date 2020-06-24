@@ -70,6 +70,8 @@ export const content = {
           - Backend, front-end, no-framework web-dev (full-stack)
         - *Modelling and Simulation* (COIS-4470H)
           - Discrete-event and Monte-Carlo simulations in Python
+        - *Database Management* (COIS-3400H)
+          - RDBMS, SQL, query optimization, relational algebra
       `,
     },
   },
@@ -120,4 +122,4 @@ export const content = {
   },
 };
 
-export default { name, contact, content }
+export default { name, contact, content };

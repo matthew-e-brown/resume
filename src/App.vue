@@ -57,6 +57,7 @@ h1 {
   #page {
     box-shadow: 0.1em 0.25em 0.85em 0.12em rgba(14, 14, 14, 0.35);
     border-radius: 0.5rem;
+    min-height: 66rem;
   }
 }
 

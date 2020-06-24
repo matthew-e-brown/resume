@@ -46,7 +46,7 @@ main {
 }
 
 * >>> p:not(.no-indent) {
-  text-indent: 2em;
+  text-indent: 4em;
 }
 
 * >>> p {

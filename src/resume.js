@@ -115,8 +115,8 @@ export const content = {
     },
     "Awards": {
       "D.E.L.F. / D.A.L.F. B1 Certified": `
-        Officially bilingual, certified by the <span lang="fr">minisère de
-        l'éducation et de la jeunesse</span>.
+        Officially bilingual, certified by the <span lang="fr">ministère de
+        l'Éducation et de la Jeunesse</span> in France.
       `,
     },
   },

@@ -8,11 +8,10 @@ wanted to use components and 2) because I can! 🥳
 ## Usage
 
 If you like the look of my resume, feel free to fork this repository and use
-this resume's theme as your own! I would be flatterd if you did. 😊
+this resume's theme as your own! I would be flattered if you did. 😊
 
-Everything on it can be tweaked simply by editing
-[`resume-data.js`](src/resume-data.js). See the [Data](#data) section for
-details.
+Everything on it can be tweaked simply by editing [`resume.js`](src/resume.js).
+See the [Data](#data) section for details.
 
 
 ### Running
@@ -30,6 +29,14 @@ and build it with
 $ npm run build
 ```
 
+It can be deployed to GitHub pages using
+
+```console
+$ npm run deploy
+```
+
+This command will include a build of the project.
+
 The `CoverLetter.vue` view is not available in production &mdash; only when
 running locally. See directly [below](#cover-letter).
 
@@ -37,29 +44,31 @@ running locally. See directly [below](#cover-letter).
 ### Cover Letter
 
 When I write my cover letters, I like for them to have the same header/theme as
-my resume. So, I've included a second view in this project which allows me to do
-just that. This view is not rendered in production, meaning that even if you
-have something written, it won't show up when you deploy it to GitHub pages.
+my resume. So, in case you're the same way, I've included a second view in this
+project which will allow you to do just that. This view is not rendered in
+production, meaning that even if you have something written, it won't show up
+when you build it or deploy it to GitHub Pages.
 
 To create a cover letter, simply create a `src/cover-letter.md` file, and start
 writing in it. The contents of this file will automatically appear as body-text
 in the `/cover-letter` route. **If I were you, I would create this file
-regardless of whether you're going to write a cover letter**. Unless you don't
-mind Webpack constantly giving you a warning in your `npm run serve` console.
+regardless of whether you're going to write a cover letter**. That is, unless
+you don't mind Webpack constantly giving you a warning in your `npm run serve`
+console.
 
 
 #### Custom Syntax &mdash; Non-indented paragraphs
 
-If you start a paragraph with `//!`, that paragraph will have no text-indent.
-This is useful for omitting the indent after a `ul` or `ol`, or, more likely, at
-the bottom and top for greetings and signoffs.
+In the cover letter, if you start a paragraph with `//!`, that paragraph will
+have no text-indent. This is useful for omitting the indent after a `ul` or
+`ol`, or, more likely, at the bottom and top for greetings and signoffs.
 
 ```markdown
 //! Dear Company President:
 
 I think I'm a great fit for this position. Here's why...
 
-//! &mdash;  <!-- Linebreak with double-spaces enabled -->
+//! &mdash;  <!-- Linebreak by ending with double-spaces enabled -->
 Matt
 ```
 
@@ -67,12 +76,13 @@ Markdown didn't really have anything that would let me do this without
 complicating the structure of the DOM or something, so I just ran it through a
 simple regular expression.
 
+
 ### Data
 
 #### Body
 
-When making this resume, I always got stuck with my own layout formula. Here's a
-quick cheatsheet:
+When making this resume, Even I got a little lost sometimes with what object
+correlated to what. Here's a quick cheatsheet:
 
 ```javascript
 export const body = {
@@ -89,11 +99,11 @@ export const body = {
 
 #### Contact
 
-For the most part, `resume-data.js` is pretty easy to follow. But, the `contact`
+For the most part, `resume.js` is pretty easy to follow. But, the `contact`
 object (used for the grid of URLs, phone numbers, and other information at the
-top of the page) has some additional possibilies.
+top of the page) has some additional features.
 
-For the most basic usage, this is probably all you need:
+For the most basic usage, this is probably all you'll need:
 
 ```javascript
 export const contact = {
@@ -101,25 +111,36 @@ export const contact = {
     url: 'https://example.com',
     display: 'Text to display in <a>'
   },
+  // more service(s) ...
 };
 ```
 
-The `url` field can be omitted if it isn't necessary. This will remove the
-hyperlink and just use text.
+The `url` field can be omitted if it isn't necessary. Alternatively, the entire
+service can be just a string:
+
+```javascript
+export const contact = {
+  service: 'MyProfileName',
+  // more service(s) ...
+}
+```
+
+This will result in the `<a>` tag being replaced by a `<span>`.
 
 By default, the following are recognized as services and have the proper
-FontAwesome icons set:
+FontAwesome icons set for them when they're used as keys (in place of the
+`service` key used in the above examples):
 
-| Key in the Object   | FontAwesome Icon          |
-| :------------------ | :------------------------ |
-| `phone`             | `fa-phone-alt`            |
-| `mobile`            | `fa-mobile`               |
-| `email`             | `fa-paper-plane`          |
-| `github`            | `fa-github`               |
-| `twitter`           | `fa-twitter`              |
-| `linkedin`          | `fa-linkedin`             |
-| `stackoverflow`     | `fa-stack-overflow`       |
-| all others          | `fa-external-link-square` |
+| Key in the Object   | FontAwesome Icon                    |
+| :------------------ | :---------------------------------- |
+| `phone`             | [`fa-phone-alt`][icon-1]            |
+| `mobile`            | [`fa-mobile`][icon-2]               |
+| `email`             | [`fa-paper-plane`][icon-3]          |
+| `github`            | [`fa-github`][icon-4]               |
+| `twitter`           | [`fa-twitter`][icon-5]              |
+| `linkedin`          | [`fa-linkedin`][icon-6]             |
+| `stackoverflow`     | [`fa-stack-overflow`][icon-7]       |
+| all others          | [`fa-external-link-square`][icon-8] |
 
 However, if you don't like these, you can specify `icon` and pass in a valid
 FontAwesome icon name (including the `fa-` prefix), and you'll get that icon
@@ -150,8 +171,8 @@ export const contact = false;
 
 This app uses a single Pro Icon from FontAwesome. If you have FontAwesome Pro,
 you have nothing to worry about! Yay! That is, as long as you've previously done
-the steps required to use FontAwesome with a package manager:
-[FontAwesome Docs][1]
+the steps required to use FontAwesome with a package manager (see the
+[FontAwesome Docs][fa-docs]).
 
 If you don't, here's how to get it working (you're going to have a slightly
 different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
@@ -181,4 +202,12 @@ different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
 4.  Done!
 
 
-[1]: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+[fa-docs]: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+[icon-1]: https://fontawesome.com/icons/phone-alt?style=solid
+[icon-2]: https://fontawesome.com/icons/mobile?style=solid
+[icon-3]: https://fontawesome.com/icons/paper-plane?style=solid
+[icon-4]: https://fontawesome.com/icons/github?style=brands
+[icon-5]: https://fontawesome.com/icons/twitter?style=brands
+[icon-6]: https://fontawesome.com/icons/linkedin-in?style=brands
+[icon-7]: https://fontawesome.com/icons/stack-overflow?style=brands
+[icon-8]: https://fontawesome.com/icons/external-link-square-alt?style=solid

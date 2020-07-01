@@ -4,6 +4,12 @@ I got fed up with screwing around with styles in Microsoft Word and decided to
 use CSS for my resume instead. Then, I decided to make it with Vue because, 1) I
 wanted to use components and 2) because I can! 🥳
 
+This is actually a printable webpage which is designed to look like a document.
+As such, it is not responsive. It is verified to print properly from Chrome and
+Firefox on Windows. [In some older versions of Chrome][issue] (before 83),
+having Windows display scaling set to anything other than 100% would affect the
+margins of the printed page. Double check that you're up to date if you use this.
+
 
 ## Usage
 
@@ -202,6 +208,7 @@ different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
 4.  Done!
 
 
+[issue]: https://bugs.chromium.org/p/chromium/issues/detail?id=1059578
 [fa-docs]: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
 [icon-1]: https://fontawesome.com/icons/phone-alt?style=solid
 [icon-2]: https://fontawesome.com/icons/mobile?style=solid

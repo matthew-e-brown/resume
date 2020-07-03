@@ -44,43 +44,42 @@ $ npm run deploy
 This command will include a build of the project.
 
 The `CoverLetter.vue` view is not available in production &mdash; only when
-running locally. See directly [below](#cover-letter).
+running locally. See [below](#cover-letter).
 
 
-### Cover Letter
+### FontAwesome
 
-When I write my cover letters, I like for them to have the same header/theme as
-my resume. So, in case you're the same way, I've included a second view in this
-project which will allow you to do just that. This view is not rendered in
-production, meaning that even if you have something written, it won't show up
-when you build it or deploy it to GitHub Pages.
+This app uses a single Pro Icon from FontAwesome. If you have FontAwesome Pro,
+you have nothing to worry about! Yay! That is, as long as you've previously done
+the steps required to use FontAwesome with a package manager (see the
+[FontAwesome Docs][fa-docs]).
 
-To create a cover letter, simply create a `src/cover-letter.md` file, and start
-writing in it. The contents of this file will automatically appear as body-text
-in the `/cover-letter` route. **If I were you, I would create this file
-regardless of whether you're going to write a cover letter**. That is, unless
-you don't mind Webpack constantly giving you a warning in your `npm run serve`
-console.
+If you don't, here's how to get it working (you're going to have a slightly
+different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
 
-
-#### Custom Syntax &mdash; Non-indented paragraphs
-
-In the cover letter, if you start a paragraph with `//!`, that paragraph will
-have no text-indent. This is useful for omitting the indent after a `ul` or
-`ol`, or, more likely, at the bottom and top for greetings and signoffs.
-
-```markdown
-//! Dear Company President:
-
-I think I'm a great fit for this position. Here's why...
-
-//! &mdash;  <!-- Linebreak by ending with double-spaces enabled -->
-Matt
-```
-
-Markdown didn't really have anything that would let me do this without
-complicating the structure of the DOM or something, so I just ran it through a
-simple regular expression.
+1.  Uninstall `@fortawesome/font-awesome-pro`, and install
+    `@fortawesome/font-awesome-free`:
+    ```console
+    $ npm uninstall --save @fortawesome/font-awesome-pro
+    $ npm install --save @fortawesome/font-awesome-free
+    ```
+2.  Go to [`main.js`](src/main.js) and change the imports from
+    `font-awesome-pro` to `font-awesome-free`:
+    ```javascript
+    import '@fortawesome/fontawesome-{pro => free}/css/all.min.css';
+    import '@fortawesome/fontawesome-{pro => free}/js/all.min.js';
+    ```
+3.  Head to [`ResumeSubsection.vue`](src/components/ResumeSubsection.vue) and
+    get change the `content` and `font-family` declarations at the bottom of the
+    file to the following:
+    ```css
+    * >>> ul ul li::before {
+      /* ... */
+      font-family: "Font Awesome 5 Free";
+      content: "\f30b";
+    }
+    ```
+4.  Done!
 
 
 ### Data
@@ -173,39 +172,40 @@ export const contact = false;
 ```
 
 
-### FontAwesome
+### Cover Letter
 
-This app uses a single Pro Icon from FontAwesome. If you have FontAwesome Pro,
-you have nothing to worry about! Yay! That is, as long as you've previously done
-the steps required to use FontAwesome with a package manager (see the
-[FontAwesome Docs][fa-docs]).
+When I write my cover letters, I like for them to have the same header/theme as
+my resume. So, in case you're the same way, I've included a second view in this
+project which will allow you to do just that. This view is not rendered in
+production, meaning that even if you have something written, it won't show up
+when you build it or deploy it to GitHub Pages.
 
-If you don't, here's how to get it working (you're going to have a slightly
-different bullet point, `long-arrow-alt-right` instead of `long-arrow-right`):
+To create a cover letter, simply create a `src/cover-letter.md` file, and start
+writing in it. The contents of this file will automatically appear as body-text
+in the `/cover-letter` route. **If I were you, I would create this file
+regardless of whether you're going to write a cover letter**. That is, unless
+you don't mind Webpack constantly giving you a warning in your `npm run serve`
+console.
 
-1.  Uninstall `@fortawesome/font-awesome-pro`, and install
-    `@fortawesome/font-awesome-free`:
-    ```console
-    $ npm uninstall --save @fortawesome/font-awesome-pro
-    $ npm install --save @fortawesome/font-awesome-free
-    ```
-2.  Go to [`main.js`](src/main.js) and change the imports from
-    `font-awesome-pro` to `font-awesome-free`:
-    ```javascript
-    import '@fortawesome/fontawesome-{pro => free}/css/all.min.css';
-    import '@fortawesome/fontawesome-{pro => free}/js/all.min.js';
-    ```
-3.  Head to [`ResumeSubsection.vue`](src/components/ResumeSubsection.vue) and
-    get change the `content` and `font-family` declarations at the bottom of the
-    file to the following:
-    ```css
-    * >>> ul ul li::before {
-      /* ... */
-      font-family: "Font Awesome 5 Free";
-      content: "\f30b";
-    }
-    ```
-4.  Done!
+
+#### Custom Syntax &mdash; Non-indented paragraphs
+
+In the cover letter, if you start a paragraph with `//!`, that paragraph will
+have no text-indent. This is useful for omitting the indent after a `ul` or
+`ol`, or, more likely, at the bottom and top for greetings and signoffs.
+
+```markdown
+//! Dear Company President:
+
+I think I'm a great fit for this position. Here's why...
+
+//! &mdash;  <!-- Linebreak by ending with double-spaces enabled -->
+Matt
+```
+
+Markdown didn't really have anything that would let me do this without
+complicating the structure of the DOM or something, so I just ran it through a
+simple regular expression.
 
 
 [issue]: https://bugs.chromium.org/p/chromium/issues/detail?id=1059578

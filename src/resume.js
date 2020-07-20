@@ -1,6 +1,7 @@
 // Use any valid CSS colour:
 export const titleColor = '#004586';
 export const headerColor = '#0066cc';
+export const backgroundColor = '#dcecfc';
 
 export const name = "Matthew Brown";
 
@@ -25,6 +26,12 @@ export const contact = {
   //   url: "https://stackoverflow.com/users/10549827/matthew-e-brown",
   //   display: "/matthew-e-brown"
   // },
+  // website: {
+  //   url: "https://matthew-brown.net",
+  //   display: "matthew-brown.net",
+  //   icon: 'fa-globe',
+  //   iconStyle: 'far'
+  // }
 };
 
 export const content = {
@@ -109,8 +116,8 @@ export const content = {
     "Languages": {
       "__no-header__": `
         **English** &mdash; Native language, full comprehension and speaking  
-        **French** &mdash; Near full comprehension, good speaking  
-        **Japanese** &mdash; Basic comprehension, minimal speaking
+        **French** &mdash; Good comprehension and speaking  
+        **Japanese** &mdash; Basic reading comprehension
       `,
     },
     "Awards": {

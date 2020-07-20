@@ -1,25 +1,22 @@
 <template>
   <div id="page">
-    <h1 :style="{ color }">{{ name }}</h1>
+    <h1 :style="{ color: titleColor }">{{ name }}</h1>
     <ContactGrid v-if="contact !== false" :contact="contact" />
     <router-view />
   </div>
 </template>
 
 <script>
-import { name, contact, titleColor } from '@/resume';
+import { name, contact, titleColor, backgroundColor } from '@/resume';
 import ContactGrid from '@/components/ContactGrid';
 
 export default {
   name: 'Page',
   components: { ContactGrid },
   data: function() {
-    return {
-      name,
-      contact,
-      color: titleColor
-    }
-  }
+    return { name, contact, titleColor }
+  },
+  beforeMount: () => document.documentElement.style.backgroundColor = backgroundColor
 }
 </script>
 
@@ -38,7 +35,7 @@ h1 {
   font-size: 16px;
   font-weight: 400;
   color:rgb(18, 13, 13);
-  background-color: rgb(220, 236, 252);
+  background-color: rgb(156, 156, 156);
 }
 
 /* Measurements taken from the original print copy of my resume: */

@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/matthew-e-brown/resume#readme",
   "license": "MIT",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "watch": "ts-node compile.ts watch",
     "build": "ts-node compile.ts build",

@@ -1,0 +1,65 @@
+@import 'common';
+
+h2, h3, h4, h5, h6,
+ul, ol, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 900;
+  font-variant: small-caps;
+  font-size: 1.3rem;
+  line-height: 1.1;
+
+  letter-spacing: 0.2ch;
+
+  margin: .25em -0.5rem .25em -0.5rem;
+  padding: 0 0.5rem;
+
+  color: $accent-2;
+  border-bottom: 0.075em solid $text-color;
+}
+
+.subsection {
+  &:not(.no-header) {
+    display: grid;
+    grid-template-columns: 7.25em 1fr;
+    >:first-child { padding-left: 0; }
+    >:last-child { padding-right: 0; }
+  }
+
+  &.no-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  +.no-header { margin-top: 0.275em; }
+  >* { padding: 0.3rem; }
+}
+
+// The h3's are the ones off in the left side
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: $accent-3;
+}
+
+// Above each chunk of body text; one per entry
+h4 {
+  font-size: 1rem;
+  margin-bottom: 0.1em;
+}
+
+.body-text {
+  font-size: 1rem;
+  margin-bottom: 0.4em;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+ul {
+  margin: 0;
+  li { margin: 0; }
+}

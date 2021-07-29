@@ -1,11 +1,6 @@
 @charset "UTF-8";
 @use "normalize.css/normalize.css";
 
-// https://stackoverflow.com/a/30421654/10549827
-@function unicode($str) {
-  @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"");
-}
-
 
 // The following values are to be set as if you were working with a real
 // document. The correct sizes, in rem, will be calculated. This means that
@@ -88,11 +83,8 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 // Some styles to reset default browser behaviour and provide sensible defaults.
 
 
-h1, h2, h3, h4, h5, h6,
-ul, ol, p {
-  margin-block-start: 0;
+h1 {
   margin-top: 0;
-  margin-block-end: 0;
   margin-bottom: 0;
 }
 
@@ -174,73 +166,17 @@ h1 {
   }
 }
 
-h2 {
-  font-family: 'Catamaran', sans-serif;
-  font-weight: 900;
-  font-variant: small-caps;
-  font-size: 1.3rem;
-  line-height: 1.1;
-
-  letter-spacing: 0.2ch;
-
-  margin: .25em -0.5rem .25em -0.5rem;
-  padding: 0 0.5rem;
-
-  color: $accent-2;
-  border-bottom: 0.075em solid $text-color;
-}
-
-.subsection {
-  &:not(.no-header) {
-    display: grid;
-    grid-template-columns: 7.25em 1fr;
-    >:first-child { padding-left: 0; }
-    >:last-child { padding-right: 0; }
-  }
-
-  &.no-header {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  +.no-header { margin-top: 0.275em; }
-  >* { padding: 0.3rem; }
-}
-
-// The h3's are the ones off in the left side
-h3 {
-  font-size: 1rem;
-  font-weight: 400;
-  color: $accent-3;
-}
-
-// Above each chunk of body text; one per entry
-h4 {
-  font-size: 1rem;
-  margin-bottom: 0.1em;
-}
-
-.body-text {
-  font-size: 1rem;
-  margin-bottom: 0.4em;
-
-  &:last-child { margin-bottom: 0; }
-}
-
 ul {
   list-style-type: square;
   padding-left: 2.4em;
   padding-inline-start: 2.4em;
-
-  margin: 0;
-  li { margin: 0; }
 
   ul li {
     list-style-type: none;
     position: relative;
 
     &::before, >svg {
-      content: unicode("\f178");
+      content: "\f178";
       font-family: 'Font Awesome 5 Pro';
       font-style: normal;
       font-variant: normal;

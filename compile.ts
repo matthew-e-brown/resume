@@ -140,7 +140,7 @@ const renderView = async (target: ViewName) => {
       smartLists: true,
       headerIds: true,
       xhtml: true
-    });
+    }).replace(/<p>\s*?\/\/! ?/g, `<p class="no-indent">`);
 
     data = { ...data, ...coverData, body: coverBody };
   }
@@ -240,10 +240,10 @@ const main = async (argv: string[]) => {
   const buildHandlebars = async () => {
     if (fileArg == 'index') await outputView(ViewName.Resume);
     else if (fileArg == 'cover') await outputView(ViewName.CoverLetter);
-    else await Promise.all([
-      outputView(ViewName.Resume),
-      outputView(ViewName.CoverLetter)
-    ]);
+    else {
+      await outputView(ViewName.Resume);
+      await outputView(ViewName.CoverLetter);
+    }
   }
 
   console.log("Building 'src' directory...");

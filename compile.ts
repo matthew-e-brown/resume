@@ -3,10 +3,12 @@ import { readFile, readdir, rm, mkdir, writeFile } from 'fs/promises';
 
 import sass from 'sass';
 import yaml from 'yaml';
-import marked from 'marked';
 import handlebars from 'handlebars';
 import { minify } from 'html-minifier';
 import chokidar from 'chokidar';
+
+import marked from 'marked';
+import hljs from 'highlight.js';
 
 const enum ViewName { Resume, CoverLetter };
 
@@ -220,6 +222,10 @@ const clearDist = async () => {
 const main = async (argv: string[]) => {
   // Remove the /dist/ directory first
   await clearDist();
+
+  marked.setOptions({
+    highlight: (code, language) => hljs.highlight(code, { language }).value
+  });
 
   if (
     argv.length !== 2 ||

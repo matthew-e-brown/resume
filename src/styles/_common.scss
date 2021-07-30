@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @use "normalize.css/normalize.css";
+@use 'highlight.js/scss/atom-one-light';
 
 
 // The following values are to be set as if you were working with a real
@@ -192,4 +193,17 @@ ul {
       top: 0.25em;
     }
   }
+}
+
+pre, code, kbd, samp {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+}
+
+pre {
+  background-color: #f7f7f7;
+  border-radius: 0.35em;
+  font-size: 0.85em;
+  padding: 0.9em;
+  margin: 0.80rem 0;
 }

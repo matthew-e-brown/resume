@@ -10,11 +10,11 @@ sections:
           - title: Web Development Specific
             body: |-
               - Expert with HTML, CSS, JavaScript
-                - Including Sass and TypeScript
-                - Experienced Flexbox and CSS Grid
-                - Caught up with ES2019
+                - Including Sass, TypeScript, JSX, et cetera
+                - JavaScript for both browser and Node environments
+                - Caught up with ES2019&nbsp;/&nbsp;ES10
               - Skilled with Vue 2 and 3 (including the Composition API)
-              - Experienced with vanilla PHP
+              - Experienced with module-bundlers (Webpack, Vite, Rollup)
 
           - title: General
             body: |-
@@ -113,12 +113,12 @@ sections:
 
   - header: Other Achievements
     subsections:
-      - header: "[Cotera&#46;io](https://cotera.io/about)"
+      - header: "*[Cotera&#46;io](https://cotera.io/about)*"
         entries:
           - body: |-
               Published a Vue single-page-application (SPA) using Firebase as a
-              backend. The app includes a fully responsive user-interface,
-              realtime data storage, user authentication, and works as a PWA.
+              backend. The app includes a fully responsive user-interface; a
+              synced, live-updating database; and user authentication.
 
       - header: Languages
         entries:

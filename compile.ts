@@ -7,7 +7,7 @@ import handlebars from 'handlebars';
 import { minify } from 'html-minifier';
 import chokidar from 'chokidar';
 
-import marked from 'marked';
+import { marked } from 'marked';
 import hljs from 'highlight.js';
 
 const enum ViewName { Resume, CoverLetter };
@@ -136,7 +136,7 @@ const renderView = async (target: ViewName) => {
     }
 
     const coverData = yaml.parse(rawCoverData);
-    const coverBody = marked(rawCoverBody, {
+    const coverBody = marked.parse(rawCoverBody, {
       gfm: true,
       sanitize: false,
       smartLists: true,

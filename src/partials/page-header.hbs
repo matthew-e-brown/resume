@@ -4,7 +4,7 @@
   <div id="contact-grid">
     {{#each _shared.contacts}}
       <div class="contact-entry">
-        {{{ fa-icon icon.style icon.name }}}
+        {{{ fa-icon icon.style icon.name 'fa-fw' }}}
         <a href="{{{ url }}}">{{{ text }}}</a>
       </div>
     {{/each}}

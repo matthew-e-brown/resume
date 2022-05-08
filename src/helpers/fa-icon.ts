@@ -5,23 +5,30 @@
  */
 
 import { IconPrefix, IconName } from '@fortawesome/fontawesome-common-types';
+import { HelperOptions } from 'micro-ssg';
 
 
 function pickPackage(prefix: IconPrefix): string {
     switch (prefix) {
-        case 'fas': return 'pro-solid-svg-icons';
-        case 'far': return 'pro-regular-svg-icons';
-        case 'fal': return 'pro-light-svg-icons';
-        case 'fat': return 'pro-thin-svg-icons';
-        case 'fad': return 'pro-duotone-svg-icon';
-        case 'fab': return 'free-brands-svg-icons';
-        // 'fak' is used for user uploaded ones
+        case 'fas': return '@fortawesome/pro-solid-svg-icons';
+        case 'far': return '@fortawesome/pro-regular-svg-icons';
+        case 'fal': return '@fortawesome/pro-light-svg-icons';
+        case 'fat': return '@fortawesome/pro-thin-svg-icons';
+        case 'fad': return '@fortawesome/pro-duotone-svg-icon';
+        case 'fab': return '@fortawesome/free-brands-svg-icons';
         default: throw new Error(`Unsupported icon prefix: ${prefix}`);
     }
 }
 
 
-export default function (iconPrefix: Exclude<IconPrefix, 'fak'>, iconName: IconName): string {
+export default function (
+    iconPrefix: Exclude<IconPrefix, 'fak'>,
+    iconName: IconName,
+    ...args: [ ...string[], HelperOptions ]
+): string {
+
+    // Remove the unused Handlebars context argument
+    const extraClasses = args.slice(0, -1) as string[];
 
     // Normalize name to camelCase for importing; ensure 'fa' prefix is present
     // https://stackoverflow.com/a/60738940/10549827
@@ -33,8 +40,8 @@ export default function (iconPrefix: Exclude<IconPrefix, 'fak'>, iconName: IconN
 
     // Need to use `require` over `import` because Handlebars does not support
     // asynchronous helpers
-    /* eslint-disable @typescript-eslint/no-var-requires */
-    const iconModule = require(`@fortawesome/${packageName}/${nameCamel}`);
+    /* eslint-disable-next-line @typescript-eslint/no-var-requires */
+    const iconModule = require(`${packageName}/${nameCamel}`);
 
     const width: number = iconModule.width;
     const height: number = iconModule.height;
@@ -62,17 +69,18 @@ export default function (iconPrefix: Exclude<IconPrefix, 'fak'>, iconName: IconN
         `svg-inline--fa`,
         `fa-w-${derivedWidth}`,
         nameKebab, // includes the 'fa'
+        ...extraClasses,
     ];
 
     const attrs = Object.entries({
-        'class': classes.join(' '),
-        'aria-hidden': 'true',
-        'focusable': 'false',
-        'data-prefix': iconPrefix,
-        'data-icon': nameKebab,
-        'role': 'img',
         'xmlns': 'http://www.w3.org/2000/svg',
         'viewBox': `0 0 ${width} ${height}`,
+        'class': classes.join(' '),
+        'role': 'img',
+        'focusable': 'false',
+        'aria-hidden': 'true',
+        'data-prefix': iconPrefix,
+        'data-icon': nameKebab,
         'data-fa-i2svg': ''
     })
         .map(([attr, value]) => `${attr}="${value}"`)

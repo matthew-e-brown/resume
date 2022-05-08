@@ -3,12 +3,12 @@
 <head>
   {{> head-metadata }}
   <link rel="stylesheet" href="./cover-letter.min.css">
-  <title>{{ name }} | Cover Letter</title>
+  <title>{{ _shared.name }} | Cover Letter</title>
 </head>
 <body>
   <div id="page">
-    {{> header }}
-    {{{ body }}}
+    {{> page-header }}
+    {{{ _md }}}
   </div>
 </body>
 </html>

@@ -1,4 +1,6 @@
-@import 'common';
+@charset 'UTF-8';
+@use 'common' as *;
+
 
 h2, h3, h4, h5, h6,
 ul, ol, p {

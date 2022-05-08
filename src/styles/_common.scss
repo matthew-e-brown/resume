@@ -1,6 +1,6 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 @use "normalize.css/normalize.css";
-@use 'highlight.js/scss/atom-one-light';
+@use 'sass:math';
 
 
 // The following values are to be set as if you were working with a real
@@ -39,14 +39,16 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 
 #page {
   box-sizing: border-box;
-  width: $width / $font-size * 1rem;
-  padding: ($padding-tb / $font-size * 1rem) ($padding-lr / $font-size * 1rem);
+  width: math.div($width, $font-size) * 1rem;
+  padding:
+    math.div($padding-tb, $font-size) * 1rem
+    math.div($padding-lr, $font-size) * 1rem;
 
   margin: 0 auto;
   background-color: white;
 
   @media not print {
-    min-height: $height / $font-size * 1rem;
+    min-height: math.div($height, $font-size) * 1rem;
     box-shadow: 0.1em 0.25em 0.85em 0.12em rgba(14, 14, 14, 0.35);
     border-radius: 0.5rem;
   }
@@ -176,17 +178,7 @@ ul {
     list-style-type: none;
     position: relative;
 
-    &::before, >svg {
-      content: "\f178";
-      font-family: 'Font Awesome 5 Pro';
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    // The pseudo-element is replaced with SVG
-    &::before { display: none; }
+    // FontAwesome Icon
     svg {
       position: absolute;
       left: -1.4em;

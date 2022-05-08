@@ -1,10 +1,10 @@
-<h1>{{ name }}</h1>
+<h1>{{ _shared.name }}</h1>
 
-{{#if contacts}}
+{{#if _shared.contacts}}
   <div id="contact-grid">
-    {{#each contacts}}
+    {{#each _shared.contacts}}
       <div class="contact-entry">
-        <i class="{{ icon.style }} {{ icon.name }} fa-fw"></i>
+        {{{ fa-icon icon.style icon.name }}}
         <a href="{{{ url }}}">{{{ text }}}</a>
       </div>
     {{/each}}

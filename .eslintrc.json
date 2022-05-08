@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "eol-last": "warn",
+      "linebreak-style": [ "error", "unix" ],
+      "semi": [ "error", "always" ],
+      "indent": [ "warn", 4, { "SwitchCase": 1 } ],
+      "no-trailing-spaces": [ "error", { "ignoreComments": true } ]
+    }
+}

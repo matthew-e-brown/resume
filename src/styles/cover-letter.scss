@@ -1,4 +1,6 @@
-@import 'common';
+@charset 'UTF-8';
+@use 'common' as *;
+@use 'highlight.js/scss/atom-one-light';
 
 #contact-grid {
   border-bottom: 0.075em solid $text-color;

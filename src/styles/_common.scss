@@ -28,56 +28,56 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 
 
 :root {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.4;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
 
-  color: $text-color;
-  background-color: rgb(220, 236, 252);
+    color: $text-color;
+    background-color: rgb(220, 236, 252);
 }
 
 #page {
-  box-sizing: border-box;
-  width: math.div($width, $font-size) * 1rem;
-  padding:
+    box-sizing: border-box;
+    width: math.div($width, $font-size) * 1rem;
+    padding:
     math.div($padding-tb, $font-size) * 1rem
     math.div($padding-lr, $font-size) * 1rem;
 
-  margin: 0 auto;
-  background-color: white;
+    margin: 0 auto;
+    background-color: white;
 
-  @media not print {
-    min-height: math.div($height, $font-size) * 1rem;
-    box-shadow: 0.1em 0.25em 0.85em 0.12em rgba(14, 14, 14, 0.35);
-    border-radius: 0.5rem;
-  }
+    @media not print {
+        min-height: math.div($height, $font-size) * 1rem;
+        box-shadow: 0.1em 0.25em 0.85em 0.12em rgba(14, 14, 14, 0.35);
+        border-radius: 0.5rem;
+    }
 
-  @media only print {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+    @media only print {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 @page {
-  // The margins on the real page are 0 because we allow for the auto-left-right
-  // margins on the #page div to center the box: this way, we can have things
-  // jut into the margins should we so please.
+    // The margins on the real page are 0 because we allow for the auto-left-right
+    // margins on the #page div to center the box: this way, we can have things
+    // jut into the margins should we so please.
 
-  width: $width;
-  height: $height;
-  margin: $padding-tb 0;
+    width: $width;
+    height: $height;
+    margin: $padding-tb 0;
 }
 
 @media only print {
-  :root {
-    font-size: 12pt;
-    background: none !important;
-  }
+    :root {
+        font-size: 12pt;
+        background: none !important;
+    }
 
-  a[href^="mailto:"], a[href^="tel:"] {
-    text-decoration-line: none;
-  }
+    a[href^="mailto:"], a[href^="tel:"] {
+        text-decoration-line: none;
+    }
 }
 
 
@@ -87,33 +87,32 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 a {
-  color: $text-color;
+    color: $text-color;
 
-  @media (hover: hover) {
-    transition: color 125ms ease-in-out;
-    &:hover { color: $link-color }
-  }
+    @media (hover: hover) {
+        transition: color 125ms ease-in-out;
+        &:hover { color: $link-color }
+    }
 }
 
-// Styles taken from FontAwesome, not required when using kit
-// svg {
-//   fill: currentColor;
-//   display: inline-block;
-//   width: 1.25em;
-//   height: 1em;
-//   vertical-align: -0.125em;
-//   overflow: visible;
-//   text-align: center;
-// }
+svg {
+    fill: currentColor;
+    display: inline-block;
+    width: 1.25em;
+    height: 1em;
+    vertical-align: -0.125em;
+    overflow: visible;
+    text-align: center;
+}
 
 section {
-  margin-top: 0.75rem;
-  &:last-child { margin-bottom: 0; }
+    margin-top: 0.75rem;
+    &:last-child { margin-bottom: 0; }
 }
 
 
@@ -124,78 +123,78 @@ section {
 // lower and lower on the page.
 
 h1 {
-  font-family: 'Catamaran', sans-serif;
-  font-weight: 900;
-  font-size: 2.83rem;
-  line-height: 1;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    font-size: 2.83rem;
+    line-height: 1;
 
-  margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 
-  color: $accent-1;
+    color: $accent-1;
 }
 
 #contact-grid {
-  display: grid;
-  column-gap: 0.35em;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-around;
-
-  padding: 0 1em;
-
-  .contact-entry {
     display: grid;
-    grid-template-columns: 1.5em auto;
-    column-gap: 0.25em;
-    align-items: center;
-  }
+    column-gap: 0.35em;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
 
-  // The icons
-  svg {
-    font-size: 1.25em;
-    color: rgb(66, 63, 63);
-  }
+    padding: 0 1em;
 
-  // The text
-  a, span {
-    justify-self: left;
+    .contact-entry {
+        display: grid;
+        grid-template-columns: 1.5em auto;
+        column-gap: 0.25em;
+        align-items: center;
+    }
 
-    padding: .15em 0 .15em .5em;
-    margin-right: 0.8em;
+    // The icons
+    svg {
+        font-size: 1.25em;
+        color: rgb(66, 63, 63);
+    }
 
-    border-left: 0.075em solid $text-color;
+    // The text
+    a, span {
+        justify-self: left;
 
-    white-space: nowrap;
-    text-overflow: clip;
-  }
+        padding: .15em 0 .15em .5em;
+        margin-right: 0.8em;
+
+        border-left: 0.075em solid $text-color;
+
+        white-space: nowrap;
+        text-overflow: clip;
+    }
 }
 
 ul {
-  list-style-type: square;
-  padding-left: 2.4em;
-  padding-inline-start: 2.4em;
+    list-style-type: square;
+    padding-left: 2.4em;
+    padding-inline-start: 2.4em;
 
-  ul li {
-    list-style-type: none;
-    position: relative;
+    ul li {
+        list-style-type: none;
+        position: relative;
 
-    // FontAwesome Icon
-    svg {
-      position: absolute;
-      left: -1.4em;
-      top: 0.25em;
+        // FontAwesome Icon
+        svg {
+            position: absolute;
+            left: -1.4em;
+            top: 0.25em;
+        }
     }
-  }
 }
 
 pre, code, kbd, samp {
-  font-family: 'Fira Code', monospace;
-  font-weight: 400;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
 }
 
 pre {
-  background-color: #f7f7f7;
-  border-radius: 0.35em;
-  font-size: 0.85em;
-  padding: 0.9em;
-  margin: 0.80rem 0;
+    background-color: #f7f7f7;
+    border-radius: 0.35em;
+    font-size: 0.85em;
+    padding: 0.9em;
+    margin: 0.80rem 0;
 }

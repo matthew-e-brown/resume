@@ -24,17 +24,17 @@ function pickPackage(prefix: IconPrefix): string {
 export default function (
     iconPrefix: Exclude<IconPrefix, 'fak'>,
     iconName: IconName,
-    ...args: [ ...string[], HelperOptions ]
+    ...args: [ ...string[] ] | [ ...string[], HelperOptions ]
 ): string {
 
     // Remove the unused Handlebars context argument
-    const extraClasses = args.slice(0, -1) as string[];
+    const extraClasses = args.filter(arg => typeof arg == 'string') as string[];
 
     // Normalize name to camelCase for importing; ensure 'fa' prefix is present
     // https://stackoverflow.com/a/60738940/10549827
     let nameCamel = iconName.replace(/-./g, m => m[1].toUpperCase());
-    if (!iconName.startsWith('fa'))
-        nameCamel = `fa${iconName[0].toUpperCase()}${iconName.slice(1)}`;
+    if (!nameCamel.startsWith('fa'))
+        nameCamel = `fa${nameCamel[0].toUpperCase()}${nameCamel.slice(1)}`;
 
     const packageName: string = pickPackage(iconPrefix);
 
@@ -81,7 +81,6 @@ export default function (
         'aria-hidden': 'true',
         'data-prefix': iconPrefix,
         'data-icon': nameKebab,
-        'data-fa-i2svg': ''
     })
         .map(([attr, value]) => `${attr}="${value}"`)
         .join(' ');

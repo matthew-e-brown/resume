@@ -15,7 +15,7 @@ h2 {
     font-size: 1.3rem;
     line-height: 1.1;
 
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.175ch;
 
     margin: .25em -0.5rem .25em -0.5rem;
     padding: 0 0.5rem;
@@ -43,8 +43,8 @@ h2 {
 
 // The h3's are the ones off in the left side
 h3 {
+    @include font-regular;
     font-size: 1rem;
-    font-weight: 400;
     color: $accent-3;
 }
 

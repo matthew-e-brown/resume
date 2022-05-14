@@ -1,6 +1,6 @@
 # =========================
 # Matthew Brown resume
-# Last updated 2022-05-06
+# This file's contents last updated 2022-05-14
 # =========================
 
 ---
@@ -19,8 +19,8 @@ sections:
 
           - title: Web Development
             body: |-
-              - Expert with standard web technologies like HTML, CSS,
-                JavaScript;
+              - Expert with standard web technologies like HTML, CSS, and
+                JavaScript
                 - Including Sass, TypeScript, JSX, etc.
               - Skilled with the Vue framework (v2 and v3), including the
                 Composition API
@@ -43,7 +43,7 @@ sections:
           - title: Linux, Git, GitHub
             body: |-
               - Very comfortable working on the command-line
-                - Experience working on Linux directly; Ubuntu, CentOS,
+                - Experience working on Linux directly: Ubuntu, CentOS
               - Knowledgable with Git and Git-related concepts
               - Experience working with GitHub for collaborative purposes
 
@@ -58,7 +58,7 @@ sections:
 
       ## ------------------------------------------------
 
-      - header: Full-time, Placements
+      - header: Full-time
         entries:
 
           - title: Developer &mdash; Hero Technical Solutions
@@ -128,7 +128,7 @@ sections:
               - *Computer Networking* (COIS-4310H)
                 - Multi-threaded chat client/server app with *ncurses* GUI
               - *Web Application Development* (COIS-3420H)
-                - Full-stack web development: HTML + CSS + PHP + MySQL + JS
+                - Full-stack web development: HTML, CSS, PHP, MySQL, JS
               - *Data Structures and Algorithms* (COIS-2020H, COIS-3020H)
                 - Linked lists, trees, heaps, treaps, tries, etc.
               - *Database Management* (COIS-3400H)

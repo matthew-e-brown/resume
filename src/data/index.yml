@@ -1,141 +1,175 @@
 # =========================
 # Matthew Brown resume
-# Last updated 2022-05-06
+# This file's contents last updated 2022-05-14
 # =========================
 
 ---
 
 sections:
+
+  ## ====================================================
+
   - header: Skills
     subsections:
+
+      ## ------------------------------------------------
 
       - header: Programming
         entries:
 
-          - title: Web Development Specific
+          - title: Web Development
             body: |-
-              - Expert with HTML, CSS, JavaScript
-                - Including Sass, TypeScript, JSX, et cetera
-                - JavaScript for both browser and Node environments
-                - Caught up with ES2019&nbsp;/&nbsp;ES10
-              - Skilled with Vue 2 and 3 (including the Composition API)
-              - Experienced with module-bundlers (Webpack, Vite, Rollup)
+              - Expert with standard web technologies like HTML, CSS, and
+                JavaScript
+                - Including Sass, TypeScript, JSX, etc.
+              - Skilled with the Vue framework (v2 and v3), including the
+                Composition API
+              - Experienced with bundlers and tooling (Webpack, Vite, etc.)
+              - Familiar with classic PHP and MySQL
 
           - title: General
             body: |-
-              - Most skilled language is JavaScript, followed by Python
-              - Comfortable with low-level C programming
-              - Experienced with Bash/Shell scripting
-              - Other languages include C# and Java
+              - Comfortable with lower-level languages
+              - Experienced with many languages, quick to learn new ones
+                - Python and Bash; and
+                - C, C++, and C#;
+                - Rust
+
+      ## ------------------------------------------------
 
       - header: Software
         entries:
 
           - title: Linux, Git, GitHub
             body: |-
-              - Experience working with Linux VMs/webservers (Ubuntu, CentOS,
-                LAMP)
-              - Very comfortable on the command-line, including with Git
-              - Experience using GitHub for collaborative purposes
+              - Very comfortable working on the command-line
+                - Experience working on Linux directly: Ubuntu, CentOS
+              - Knowledgable with Git and Git-related concepts
+              - Experience working with GitHub for collaborative purposes
 
           - title: Other Software
             body: |-
               - Atlassian, Office, and Creative Cloud suites
 
+  ## ====================================================
+
   - header: Working Experience
     subsections:
+
+      ## ------------------------------------------------
 
       - header: Full-time
         entries:
 
-          - title: Full-stack Web Developer &mdash; International Institute for Environmental Studies (IIES)
+          - title: Developer &mdash; Hero Technical Solutions
+            body: |-
+              Worked with the Zoho One suite to create and maintain custom B2B
+              applications for several clients.
+              - September 2021 to December 2021
+
+          - title: Full-stack Web Developer &mdash; International Institute for Environmental Studies
             body: |-
               Built the website for the 6th Annual IIES Science and Policy
-              Workshop, to be re-used in future years
-              ([iiesworkshops.com](https://iiesworkshops.com)). Made with
-              vanilla PHP, vanilla JS, and Sass.
+              Workshop with PHP, JavaScript, and Sass.
               - October 2020 to January 2021
 
-          - title: Intern / Co-op &mdash; TD Wealth Technology Solutions
+          # - title: Cybersecurity Rover &mdash; Trent University
+          #   body: |-
+          #     Worked with Trent IT to improve cybersecurity measures for both
+          #     staff and students during the transition to remote at the start of
+          #     the pandemic.
+          #     - July 2020 to September 2020
+
+          - title: Intern/Co-op &mdash; TD Wealth Technology Solutions
             body: |-
-              Tech support for the Wealth Money Movement (WMM) team. Worked
-              primarily with Splunk Enterprise for system monitoring and oversaw
-              creation of several status dashboards.
+              Supported the Wealth Money Movement (WMM) team. Worked primarily
+              with Splunk Enterprise for system monitoring and created several
+              dashboards.
               - September 2019 to December 2019
 
-          - title: Cybersecurity Rover &mdash; Trent University
-            body: |-
-              Worked with Trent IT to improve cybersecurity measures for both
-              staff and students during the remote transition of the pandemic.
-              - July 2020 to September 2020
+      ## ------------------------------------------------
 
       - header: Part-time
         entries:
 
-          - title: Work-study Position &mdash; Trent University
+          - title: Work-Study Position &mdash; Trent University
             body: |-
-              Assistant to the lab demonstrator. Assisting in labs as a TA and
-              creating course content for *Web Application Development*
-              (COIS-3420H).
+              TA for COIS-3420H: *Web Application Development*. Assisted in labs
+              and in creating course content.
               - January 2020 to April 2020
 
           - title: Course Content Creator &mdash; Trent University
             body: |-
-              Created lab content for *Digital World* (COIS-1010H), ushered
-              transition to web-hosting for all future lab content.
+              Created new labs for COIS-1010H: *Digital World*.
               - July 2019 to August 2019
 
           - title: Course Marker &mdash; Trent University
             body: |-
-              Marked for *Programming for Computer Systems* (COIS-1020H).
+              Marked for COIS-1020H, *Introduction to Programming*.
               - January 2019 to April 2019
 
           # - title: Technology Sales Associate &mdash; Staples Canada
           #   body: |-
-          #     Sold laptops, desktops, printers, tablets, and smartphones with
-          #     warranties, services, and accessories.
           #     - August 2016 to August 2018
+
+  ## ====================================================
 
   - header: Education
     subsections:
+
       - header: 2018-pres.
         entries:
+
           - title: Trent University
             body: |-
-              B.Sc (Hon): Computer Science with Co-op &mdash; 86.28% CGPA
-              - *Computer Networking* (COIS-4310H)
-                - Multi-threaded, multi-client chat app entirely in C, including
-                  full Curses GUI for terminal
+              B.Sc (Hon): Computer Science with co-op
               - *Systems Programming* (COIS-3380H)
-                - Low-level C programming and bash scripting
+                - Low-level C programming and Bash scripting
+              - *Computer Networking* (COIS-4310H)
+                - Multi-threaded chat client/server app with *ncurses* GUI
               - *Web Application Development* (COIS-3420H)
-                - Backend, frontend, no-framework web-dev (full-stack)
+                - Full-stack web development: HTML, CSS, PHP, MySQL, JS
+              - *Data Structures and Algorithms* (COIS-2020H, COIS-3020H)
+                - Linked lists, trees, heaps, treaps, tries, etc.
               - *Database Management* (COIS-3400H)
-                - RDBMS, SQL, query optimizations
+                - RDBMS, query optimizations, relational algebra
 
-          # - *Modelling and Simulation* (COIS-4470H)
-          #   - Discrete-event and Monte-Carlo simulations, done in Python
+            # - *Modelling and Simulation* (COIS-4470H)
+            #   - Discrete-event and Monte-Carlo simulations, mostly in Python
+
+  ## ====================================================
 
   - header: Other Achievements
     subsections:
+
+      ## ------------------------------------------------
+
       - header: "*[Cotera&#46;io](https://cotera.io/about)*"
         entries:
+          # omit title
           - body: |-
-              Published a Vue single-page-application (SPA) using Firebase as a
-              backend. The app includes a fully responsive user-interface; a
-              synced, live-updating database; and user authentication.
+              Published a single-page-application (SPA) made with Vue, using
+              Firebase as a backend. Includes a realtime database, user
+              authentication, and a fully responsive user-interface.
+
+      ## ------------------------------------------------
 
       - header: Languages
         entries:
+          # omit title
           - body: |-
-              **English** &mdash; Native language, full comprehension and
-              speaking. Excellent grammar skills.  
-              **French** &mdash; Decent comprehension and speaking.  
-          # **Japanese** &mdash; Basic reading and listening comprehension.
+              **English** &mdash; Native language, excellent comprehension,
+              speaking, and grammar.
+            # **French** &mdash; kind of forgotten most of it lately...
+            # **Japanese** &mdash; still just learning...
+
+            # ↑ maybe re-add those eventually?
+
+      ## ------------------------------------------------
 
       - header: Awards
         entries:
-          - title: D.E.L.F. / D.A.L.F. B1 Certified
+          - title: DELF / DALF B1 Certificate
             body: |-
               Officially bilingual, certified by the <span lang="fr">ministère
               de l'Éducation et de la Jeunesse</span> in France.

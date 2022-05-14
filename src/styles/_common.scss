@@ -3,6 +3,9 @@
 @use '@fortawesome/fontawesome-svg-core/styles.css';
 @use 'sass:math';
 
+// Catamaran and most Recursive styles
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Recursive:slnt,wght,CASL,CRSV@0,380,0.15,0;0,600,0.4,0;-10,380,0.5,1;-10,600,0.5,1&display=swap');
+
 
 // The following values are to be set as if you were working with a real
 // document. The correct sizes, in rem, will be calculated. This means that
@@ -12,14 +15,42 @@
 $font-size: 12pt;     // The font size to use when computing digital sizes
 $width: 8.5in;        // The desired width of the real page
 $height: 11in;        // The desired height of the real page
-$padding-tb: 15mm;    // The top/bottom margin of the output page
-$padding-lr: 22.5mm;  // The left/right margin of the output page
+$padding-tb: 0.50in;  // The top/bottom margin of the output page
+$padding-lr: 0.85in;  // The left/right margin of the output page
 
 $text-color: rgb(18, 13, 13);   // All text colour
 $link-color: rgb(0, 97, 209);   // Colour of links when hovering
 $accent-1: rgb(0, 69, 134);     // Main title colour
 $accent-2: rgb(0, 102, 204);    // Section header (h2) colour
 $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
+
+
+// ==== Recursive Variant Font Presets ====
+
+@mixin recursive-variable ($wght, $slnt, $CASL, $CRSV, $MONO) {
+    $style: 'wght' $wght, 'slnt' $slnt, 'CASL' $CASL, 'CRSV' $CRSV, 'MONO' $MONO;
+
+    // Defaults, just in case browser doesn't support variable font settings
+    font-weight: $wght;
+    @if ($slnt == 0) { font-style: normal; }
+    @else { font-style: italic; }
+
+    @supports (font-variation-settings: $style) {
+        font-style: unset;
+        font-weight: unset;
+        font-variation-settings: $style;
+    }
+
+    @supports not (font-variation-settings: 'MONO' $MONO) {
+        font-family: monospace;
+        font-weight: 400;
+    }
+}
+
+@mixin font-regular      { @include recursive-variable(380,   0, 0.15, 0, 0); }
+@mixin font-bold         { @include recursive-variable(600,   0,  0.4, 0, 0); }
+@mixin font-italic       { @include recursive-variable(380, -10,  0.5, 1, 0); }
+@mixin font-bold-italic  { @include recursive-variable(600, -10,  0.5, 1, 0); }
 
 
 // ====  Body and Meta Styles  ====
@@ -29,14 +60,30 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 
 
 :root {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Recursive', sans-serif;
+    @include font-regular;
+
     font-size: 16px;
     line-height: 1.4;
 
     color: $text-color;
     background-color: rgb(220, 236, 252);
 }
+
+em, i {
+    @include font-italic;
+    h1, h2, h3, h4, h5, h6, strong {
+        @include font-bold-italic;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    @include font-bold;
+    em, i {
+        @include font-bold-italic;
+    }
+}
+
 
 #page {
     box-sizing: border-box;
@@ -181,17 +228,4 @@ ul {
             top: 0.3em;
         }
     }
-}
-
-pre, code, kbd, samp {
-    font-family: 'Fira Code', monospace;
-    font-weight: 400;
-}
-
-pre {
-    background-color: #f7f7f7;
-    border-radius: 0.35em;
-    font-size: 0.85em;
-    padding: 0.9em;
-    margin: 0.80rem 0;
 }

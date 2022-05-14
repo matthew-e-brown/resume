@@ -1,13 +1,15 @@
-@import 'common';
+@charset 'UTF-8';
+@use 'common' as *;
+@use 'highlight.js/scss/atom-one-light';
 
 #contact-grid {
-  border-bottom: 0.075em solid $text-color;
-  padding-bottom: 1.65em;
-  margin-bottom: 1.65em;
+    border-bottom: 0.075em solid $text-color;
+    padding-bottom: 1.65em;
+    margin-bottom: 1.65em;
 }
 
 p:not(.no-indent) {
-  text-indent: 4.8em;
+    text-indent: 4.8em;
 }
 
 // Taken (mostly) from Chrome's user-agent defaults, just "formalized"

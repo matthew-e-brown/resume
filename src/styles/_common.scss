@@ -72,7 +72,7 @@ $accent-3: rgb(118, 113, 113);  // Subsection header (h3) colour
 
 em, i {
     @include font-italic;
-    h1, h2, h3, h4, h5, h6, strong {
+    strong {
         @include font-bold-italic;
     }
 }
@@ -89,8 +89,8 @@ h1, h2, h3, h4, h5, h6, strong {
     box-sizing: border-box;
     width: math.div($width, $font-size) * 1rem;
     padding:
-    math.div($padding-tb, $font-size) * 1rem
-    math.div($padding-lr, $font-size) * 1rem;
+        math.div($padding-tb, $font-size) * 1rem
+        math.div($padding-lr, $font-size) * 1rem;
 
     margin: 0 auto;
     background-color: white;

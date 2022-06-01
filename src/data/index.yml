@@ -154,16 +154,16 @@ sections:
 
       ## ------------------------------------------------
 
-      - header: Languages
-        entries:
-          # omit title
-          - body: |-
-              **English** &mdash; Native language, excellent comprehension,
-              speaking, and grammar.
-            # **French** &mdash; kind of forgotten most of it lately...
-            # **Japanese** &mdash; still just learning...
-
-            # ↑ maybe re-add those eventually?
+#     - header: Languages
+#       entries:
+#         # omit title
+#         - body: |-
+#             **English** &mdash; Native language, excellent comprehension,
+#             speaking, and grammar.
+#           # **French** &mdash; kind of forgotten most of it lately...
+#           # **Japanese** &mdash; still just learning...
+#
+#           # ↑ maybe re-add those eventually?
 
       ## ------------------------------------------------
 

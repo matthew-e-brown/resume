@@ -46,6 +46,10 @@ h3 {
     @include font-regular;
     font-size: 1rem;
     color: $accent-3;
+
+    em {
+        @include font-italic;
+    }
 }
 
 // Above each chunk of body text; one per entry

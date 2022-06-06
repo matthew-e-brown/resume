@@ -21,19 +21,19 @@ sections:
             body: |-
               - Expert with standard web technologies like HTML, CSS, and
                 JavaScript
-                - Including Sass, TypeScript, JSX, etc.
-              - Skilled with the Vue framework (v2 and v3), including the
+                - Also experienced with Sass, TypeScript, JSX, etc.
+              - Skilled with the Vue framework, both v2 and v3, including the
                 Composition API
               - Experienced with bundlers and tooling (Webpack, Vite, etc.)
-              - Familiar with classic PHP and MySQL
+              - Comfortable with classic PHP and MySQL
 
           - title: General
             body: |-
-              - Comfortable with lower-level languages
+              - Comfortable with both high- and low-level languages
               - Experienced with many languages, quick to learn new ones
-                - Python and Bash
-                - C, C++, and C#
-                - Rust
+                - Skilled with C#, intermediate with C
+                - Skilled with Python, familiar with Bash
+                - Intermediate with Rust
 
       ## ------------------------------------------------
 
@@ -43,9 +43,9 @@ sections:
           - title: Linux, Git, GitHub
             body: |-
               - Very comfortable working on the command-line
-                - Experience working on Linux directly: Ubuntu, CentOS
-              - Knowledgable with Git and Git-related concepts
-              - Experience working with GitHub for collaborative purposes
+              - Experienced with Linux environments (Ubuntu, CentOS, Arch)
+              - Knowledgeable about Git and Git-related concepts
+              - Experience working with GitHub for collaboration
 
           - title: Other Software
             body: |-
@@ -139,7 +139,7 @@ sections:
 
   ## ====================================================
 
-  - header: Other Achievements
+  - header: Personal Projects
     subsections:
 
       ## ------------------------------------------------
@@ -152,8 +152,26 @@ sections:
               Firebase as a backend. Includes a realtime database, user
               authentication, and a fully responsive user-interface.
 
-      ## ------------------------------------------------
+      - header: "*[Download Box](https://chrome.google.com/webstore/detail/download-box/khnpnladjopoijohibadononlfbmfhpo)*"
+        entries:
+          - body: |-
+              Published a Chrome extension to view and manage a user's downloads
+              in place of Chrome's default "shelf" solution. Made with Vue,
+              TypeScript, and SCSS.
 
+      - header: "[This resume](https://github.com/matthew-e-brown/resume)"
+        entries:
+          - body: |-
+              This resume is made using HTML (Handlebars), SCSS, and TypeScript,
+              and built by a [custom
+              compiler](https://github.com/matthew-e-brown/micro-ssg) written in
+              TypeScript.
+
+  ## ====================================================
+
+# - header: Other Achievements
+#   subsections:
+#
 #     - header: Languages
 #       entries:
 #         # omit title
@@ -163,13 +181,14 @@ sections:
 #           # **French** &mdash; kind of forgotten most of it lately...
 #           # **Japanese** &mdash; still just learning...
 #
-#           # ↑ maybe re-add those eventually?
+#     ## ------------------------------------------------
+#
+#     - header: Awards
+#       entries:
+#         - title: DELF / DALF B1 Certificate
+#           body: |-
+#             Officially bilingual, certified by the <span lang="fr">ministère
+#             de l'Éducation et de la Jeunesse</span> in France.
 
-      ## ------------------------------------------------
 
-      - header: Awards
-        entries:
-          - title: DELF / DALF B1 Certificate
-            body: |-
-              Officially bilingual, certified by the <span lang="fr">ministère
-              de l'Éducation et de la Jeunesse</span> in France.
+#    ↑ maybe re-add these eventually? Not really doing much with them right now.

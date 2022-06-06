@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/matthew-e-brown/resume#readme",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "scripts": {
     "clean": "rm -rf dist || rm -rf dist/**/*",
     "build": "npm run clean && npm run build::mssg && npm run build::sass && npm run build::mini",

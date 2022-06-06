@@ -22,3 +22,18 @@ which is the spiritual successor to that script I wrote for this resume.
 
 
 [micro]: https://github.com/matthew-e-brown/micro-ssg
+
+
+## Printing&nbsp;/&nbsp;Exporting
+
+Some notes on printing properly (these are mostly notes to myself, if we're
+being honest):
+
+- Use Google Chrome on Windows 10 for best results. I don't doubt that it'll
+  work on other browsers, but it's what I test on and optimize for.
+- Make sure to use Google Chrome's "Save as PDF" option in the print dialogue,
+  not "Microsoft Print to PDF".
+- Make sure that the "Background graphics" is enabled, otherwise the font-color
+  on the `h3`s won't come through properly.
+- Everything else, like margins, can be left as "Default," since the `@print`
+  CSS will handle that.

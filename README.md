@@ -1,3 +1,5 @@
+# Under Construction
+
 # My Resume
 
 After too many hours of getting fed up with messing around with styles in
@@ -10,7 +12,7 @@ job, I will go to this page and print it. There are styles in place to shape the
 margins correctly and everything. I also use it to write my cover letters, so I
 get consistent styling.
 
-Originally, my resume was built using Vue, so I could have access to its
+<!-- Originally, my resume was built using Vue, so I could have access to its
 wonderful single-file-components and scoped CSS. However, that meant that my
 final bundle included all of Vue's reactivity engine: something I did not need
 at all for a static resume. Second, I reworked it to use a custom compile script
@@ -21,7 +23,7 @@ Now, my resume is compiled using a package I wrote called [Micro SSG][micro],
 which is the spiritual successor to that script I wrote for this resume.
 
 
-[micro]: https://github.com/matthew-e-brown/micro-ssg
+[micro]: https://github.com/matthew-e-brown/micro-ssg -->
 
 
 ## Printing&nbsp;/&nbsp;Exporting
@@ -33,7 +35,7 @@ being honest):
   work on other browsers, but it's what I test on and optimize for.
 - Make sure to use Google Chrome's "Save as PDF" option in the print dialogue,
   not "Microsoft Print to PDF".
-- Make sure that the "Background graphics" is enabled, otherwise the font-color
-  on the `h3`s won't come through properly.
+- Make sure that the "Background graphics" is enabled, otherwise the font-colors
+  won't come through properly.
 - Everything else, like margins, can be left as "Default," since the `@print`
   CSS will handle that.
